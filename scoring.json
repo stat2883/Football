@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "effective_from": "2026 season",
+  "notes": "Authoritative scoring rules. score.py reads this file; do not hard-code values in the script. Point totals are rounded to 2 decimals (0.01 resolution).",
+
+  "resolution": 0.01,
+
+  "reception_points": 1,
+
+  "per_yard": {
+    "passing": 0.05,
+    "rushing": 0.1,
+    "receiving": 0.1,
+    "interception_return": 0.1,
+    "fumble_return_td_only": 0.1
+  },
+
+  "touchdowns": {
+    "passing": 6,
+    "rushing": 6,
+    "receiving": 6,
+    "special_teams_return": 6,
+    "defensive": 6
+  },
+
+  "two_point_conversions": {
+    "passing": 2,
+    "rushing": 2,
+    "receiving": 2
+  },
+
+  "long_td_bonus": {
+    "min_yards": 50,
+    "points": 6,
+    "applies_to": "every player credited on the scoring play (passer and receiver both), and defensive TDs"
+  },
+
+  "penalties": {
+    "interception_thrown": -2,
+    "fumble_lost": 0,
+    "missed_fg": 0,
+    "missed_xp": 0
+  },
+
+  "yardage_bonuses": {
+    "_rule": "Within each group, only the single highest qualifying tier is awarded. Groups stack with each other, so a QB can earn a passing bonus and a rush_rec bonus in the same game.",
+    "passing": [
+      { "stat": "pass_yds", "min": 400, "points": 7 },
+      { "stat": "pass_yds", "min": 300, "points": 5 }
+    ],
+    "rush_rec": [
+      { "stat": "rush_yds", "min": 200, "points": 7 },
+      { "stat": "rec_yds", "min": 200, "points": 7 },
+      { "stat": "rush_yds", "min": 100, "points": 5 },
+      { "stat": "rec_yds", "min": 100, "points": 5 },
+      { "stat": "rush_rec_combined", "min": 100, "points": 3 }
+    ]
+  },
+
+  "kicking": {
+    "fg_by_distance": [
+      { "min": 60, "max": null, "points": 10 },
+      { "min": 50, "max": 59, "points": 7 },
+      { "min": 40, "max": 49, "points": 5 },
+      { "min": 0, "max": 39, "points": 3 }
+    ],
+    "extra_point": 2
+  },
+
+  "defense": {
+    "interception": 3,
+    "sack": 3,
+    "fumble_recovery": 3,
+    "safety": 2,
+    "special_teams_td_credited": false,
+    "points_allowed": [
+      { "min": 0, "max": 0, "points": 15 },
+      { "min": 1, "max": 7, "points": 10 },
+      { "min": 8, "max": 13, "points": 5 },
+      { "min": 14, "max": 20, "points": 3 },
+      { "min": 21, "max": null, "points": 0 }
+    ]
+  }
+}

@@ -1,115 +1,115 @@
-name,position,team
-Michael Penix Jr,QB,Atlanta Falcons
-Brock Purdy,QB,San Francisco 49ers
-Lamar Jackson,QB,Baltimore Ravens
-Joe Burrow,QB,Cincinnati Bengals
-Patrick Mahomes,QB,Kansas City Chiefs
-Baker Mayfield,QB,Tampa Bay Buccaneers
-Bryce Young,QB,Carolina Panthers
-Caleb Williams,QB,Chicago Bears
-Drake Maye,QB,New England Patriots
-Deshaun Watson,QB,Cleveland Browns
-Matthew Stafford,QB,Los Angeles Rams
-Kirk Cousins,QB,Las Vegas Raiders
-Dak Prescott,QB,Dallas Cowboys
-Jared Goff,QB,Detroit Lions
-Jordan Love,QB,Green Bay Packers
-C.J. Stroud,QB,Houston Texans
-Kyler Murray,QB,Minnesota Vikings
-Malik Willis,QB,Miami Dolphins
-Geno Smith,QB,New York Jets
-Aaron Rodgers,QB,Pittsburgh Steelers
-Tyler Shough,QB,New Orleans Saints
-Josh Allen,QB,Buffalo Bills
-Trevor Lawrence,QB,Jacksonville Jaguars
-Justin Herbert,QB,Los Angeles Chargers
-Jayden Daniels,QB,Washington Commanders
-Tyler Allgeier,RB,Arizona Cardinals
-J.K. Dobbins,RB,Denver Broncos
-Christian McCaffrey,RB,San Francisco 49ers
-Justice Hill,RB,Baltimore Ravens
-Derrick Henry,RB,Baltimore Ravens
-Chase Brown,RB,Cincinnati Bengals
-Kenneth Walker III,RB,Kansas City Chiefs
-Bucky Irving,RB,Tampa Bay Buccaneers
-Chuba Hubbard,RB,Carolina Panthers
-D'Andre Swift,RB,Chicago Bears
-Rhamondre Stevenson,RB,New England Patriots
-TreVeyon Henderson,RB,New England Patriots
-Quinshon Judkins,RB,Cleveland Browns
-Kyren Williams,RB,Los Angeles Rams
-Blake Corum,RB,Los Angeles Rams
-Ashton Jeanty,RB,Las Vegas Raiders
-Javonte Williams,RB,Dallas Cowboys
-Saquon Barkley,RB,Philadelphia Eagles
-Jahmyr Gibbs,RB,Detroit Lions
-Josh Jacobs,RB,Green Bay Packers
-Cam Skattebo,RB,New York Giants
-David Montgomery,RB,Houston Texans
-Aaron Jones Sr,RB,Minnesota Vikings
-Jonathan Taylor,RB,Indianapolis Colts
-Ollie Gordon II,RB,Miami Dolphins
-Breece Hall,RB,New York Jets
-Jaylen Warren,RB,Pittsburgh Steelers
-Travis Etienne Jr,RB,New Orleans Saints
-Alvin Kamara,RB,New Orleans Saints
-James Cook,RB,Buffalo Bills
-Bhayshul Tuten,RB,Jacksonville Jaguars
-Omarion Hampton,RB,Los Angeles Chargers
-Jaylen Waddle,WR,Denver Broncos
-Drake London,WR,Atlanta Falcons
-Mike Evans,WR,San Francisco 49ers
-Zay Flowers,WR,Baltimore Ravens
-Tee Higgins,WR,Cincinnati Bengals
-Ja'Marr Chase,WR,Cincinnati Bengals
-Jaxon Smith-Njigba,WR,Seattle Seahawks
-Emeka Egbuka,WR,Tampa Bay Buccaneers
-Tetairoa McMillan,WR,Carolina Panthers
-Jalen Coker,WR,Carolina Panthers
-Rome Odunze,WR,Chicago Bears
-Romeo Doubs,WR,New England Patriots
-A.J. Brown,WR,New England Patriots
-Puka Nacua,WR,Los Angeles Rams
-Davante Adams,WR,Los Angeles Rams
-Tre Tucker,WR,Las Vegas Raiders
-CeeDee Lamb,WR,Dallas Cowboys
-George Pickens,WR,Dallas Cowboys
-Amon-Ra St. Brown,WR,Detroit Lions
-Jameson Williams,WR,Detroit Lions
-Christian Watson,WR,Green Bay Packers
-Matthew Golden,WR,Green Bay Packers
-Malik Nabers,WR,New York Giants
-Nico Collins,WR,Houston Texans
-Justin Jefferson,WR,Minnesota Vikings
-Jordan Addison,WR,Minnesota Vikings
-Josh Downs,WR,Indianapolis Colts
-Garrett Wilson,WR,New York Jets
-Chris Olave,WR,New Orleans Saints
-D.J. Moore,WR,Buffalo Bills
-Brian Thomas Jr,WR,Jacksonville Jaguars
-Parker Washington,WR,Jacksonville Jaguars
-Trey McBride,TE,Arizona Cardinals
-Kyle Pitts Sr,TE,Atlanta Falcons
-George Kittle,TE,San Francisco 49ers
-Travis Kelce,TE,Kansas City Chiefs
-Colston Loveland,TE,Chicago Bears
-Harold Fannin Jr,TE,Cleveland Browns
-Brock Bowers,TE,Las Vegas Raiders
-Sam LaPorta,TE,Detroit Lions
-Tucker Kraft,TE,Green Bay Packers
-Isaiah Likely,TE,New York Giants
-T.J. Hockenson,TE,Minnesota Vikings
-Dalton Kincaid,TE,Buffalo Bills
-Nick Folk,K,Atlanta Falcons
-Will Reichard,K,Minnesota Vikings
-Spencer Shrader,K,Indianapolis Colts
-Cam Little,K,Jacksonville Jaguars
-San Francisco 49ers,DEF,San Francisco 49ers
-Cincinnati Bengals,DEF,Cincinnati Bengals
-Seattle Seahawks,DEF,Seattle Seahawks
-Chicago Bears,DEF,Chicago Bears
-Cleveland Browns,DEF,Cleveland Browns
-Las Vegas Raiders,DEF,Las Vegas Raiders
-Houston Texans,DEF,Houston Texans
-Minnesota Vikings,DEF,Minnesota Vikings
-Jacksonville Jaguars,DEF,Jacksonville Jaguars
+name,last_name,first_name,position,team
+Michael Penix Jr,Penix Jr,Michael,QB,Atlanta Falcons
+Brock Purdy,Purdy,Brock,QB,San Francisco 49ers
+Lamar Jackson,Jackson,Lamar,QB,Baltimore Ravens
+Joe Burrow,Burrow,Joe,QB,Cincinnati Bengals
+Patrick Mahomes,Mahomes,Patrick,QB,Kansas City Chiefs
+Baker Mayfield,Mayfield,Baker,QB,Tampa Bay Buccaneers
+Bryce Young,Young,Bryce,QB,Carolina Panthers
+Caleb Williams,Williams,Caleb,QB,Chicago Bears
+Drake Maye,Maye,Drake,QB,New England Patriots
+Deshaun Watson,Watson,Deshaun,QB,Cleveland Browns
+Matthew Stafford,Stafford,Matthew,QB,Los Angeles Rams
+Kirk Cousins,Cousins,Kirk,QB,Las Vegas Raiders
+Dak Prescott,Prescott,Dak,QB,Dallas Cowboys
+Jared Goff,Goff,Jared,QB,Detroit Lions
+Jordan Love,Love,Jordan,QB,Green Bay Packers
+C.J. Stroud,Stroud,C.J.,QB,Houston Texans
+Kyler Murray,Murray,Kyler,QB,Minnesota Vikings
+Malik Willis,Willis,Malik,QB,Miami Dolphins
+Geno Smith,Smith,Geno,QB,New York Jets
+Aaron Rodgers,Rodgers,Aaron,QB,Pittsburgh Steelers
+Tyler Shough,Shough,Tyler,QB,New Orleans Saints
+Josh Allen,Allen,Josh,QB,Buffalo Bills
+Trevor Lawrence,Lawrence,Trevor,QB,Jacksonville Jaguars
+Justin Herbert,Herbert,Justin,QB,Los Angeles Chargers
+Jayden Daniels,Daniels,Jayden,QB,Washington Commanders
+Tyler Allgeier,Allgeier,Tyler,RB,Arizona Cardinals
+J.K. Dobbins,Dobbins,J.K.,RB,Denver Broncos
+Christian McCaffrey,McCaffrey,Christian,RB,San Francisco 49ers
+Justice Hill,Hill,Justice,RB,Baltimore Ravens
+Derrick Henry,Henry,Derrick,RB,Baltimore Ravens
+Chase Brown,Brown,Chase,RB,Cincinnati Bengals
+Kenneth Walker III,Walker III,Kenneth,RB,Kansas City Chiefs
+Bucky Irving,Irving,Bucky,RB,Tampa Bay Buccaneers
+Chuba Hubbard,Hubbard,Chuba,RB,Carolina Panthers
+D'Andre Swift,Swift,D'Andre,RB,Chicago Bears
+Rhamondre Stevenson,Stevenson,Rhamondre,RB,New England Patriots
+TreVeyon Henderson,Henderson,TreVeyon,RB,New England Patriots
+Quinshon Judkins,Judkins,Quinshon,RB,Cleveland Browns
+Kyren Williams,Williams,Kyren,RB,Los Angeles Rams
+Blake Corum,Corum,Blake,RB,Los Angeles Rams
+Ashton Jeanty,Jeanty,Ashton,RB,Las Vegas Raiders
+Javonte Williams,Williams,Javonte,RB,Dallas Cowboys
+Saquon Barkley,Barkley,Saquon,RB,Philadelphia Eagles
+Jahmyr Gibbs,Gibbs,Jahmyr,RB,Detroit Lions
+Josh Jacobs,Jacobs,Josh,RB,Green Bay Packers
+Cam Skattebo,Skattebo,Cam,RB,New York Giants
+David Montgomery,Montgomery,David,RB,Houston Texans
+Aaron Jones Sr,Jones Sr,Aaron,RB,Minnesota Vikings
+Jonathan Taylor,Taylor,Jonathan,RB,Indianapolis Colts
+Ollie Gordon II,Gordon II,Ollie,RB,Miami Dolphins
+Breece Hall,Hall,Breece,RB,New York Jets
+Jaylen Warren,Warren,Jaylen,RB,Pittsburgh Steelers
+Travis Etienne Jr,Etienne Jr,Travis,RB,New Orleans Saints
+Alvin Kamara,Kamara,Alvin,RB,New Orleans Saints
+James Cook,Cook,James,RB,Buffalo Bills
+Bhayshul Tuten,Tuten,Bhayshul,RB,Jacksonville Jaguars
+Omarion Hampton,Hampton,Omarion,RB,Los Angeles Chargers
+Jaylen Waddle,Waddle,Jaylen,WR,Denver Broncos
+Drake London,London,Drake,WR,Atlanta Falcons
+Mike Evans,Evans,Mike,WR,San Francisco 49ers
+Zay Flowers,Flowers,Zay,WR,Baltimore Ravens
+Tee Higgins,Higgins,Tee,WR,Cincinnati Bengals
+Ja'Marr Chase,Chase,Ja'Marr,WR,Cincinnati Bengals
+Jaxon Smith-Njigba,Smith-Njigba,Jaxon,WR,Seattle Seahawks
+Emeka Egbuka,Egbuka,Emeka,WR,Tampa Bay Buccaneers
+Tetairoa McMillan,McMillan,Tetairoa,WR,Carolina Panthers
+Jalen Coker,Coker,Jalen,WR,Carolina Panthers
+Rome Odunze,Odunze,Rome,WR,Chicago Bears
+Romeo Doubs,Doubs,Romeo,WR,New England Patriots
+A.J. Brown,Brown,A.J.,WR,New England Patriots
+Puka Nacua,Nacua,Puka,WR,Los Angeles Rams
+Davante Adams,Adams,Davante,WR,Los Angeles Rams
+Tre Tucker,Tucker,Tre,WR,Las Vegas Raiders
+CeeDee Lamb,Lamb,CeeDee,WR,Dallas Cowboys
+George Pickens,Pickens,George,WR,Dallas Cowboys
+Amon-Ra St. Brown,St. Brown,Amon-Ra,WR,Detroit Lions
+Jameson Williams,Williams,Jameson,WR,Detroit Lions
+Christian Watson,Watson,Christian,WR,Green Bay Packers
+Matthew Golden,Golden,Matthew,WR,Green Bay Packers
+Malik Nabers,Nabers,Malik,WR,New York Giants
+Nico Collins,Collins,Nico,WR,Houston Texans
+Justin Jefferson,Jefferson,Justin,WR,Minnesota Vikings
+Jordan Addison,Addison,Jordan,WR,Minnesota Vikings
+Josh Downs,Downs,Josh,WR,Indianapolis Colts
+Garrett Wilson,Wilson,Garrett,WR,New York Jets
+Chris Olave,Olave,Chris,WR,New Orleans Saints
+D.J. Moore,Moore,D.J.,WR,Buffalo Bills
+Brian Thomas Jr,Thomas Jr,Brian,WR,Jacksonville Jaguars
+Parker Washington,Washington,Parker,WR,Jacksonville Jaguars
+Trey McBride,McBride,Trey,TE,Arizona Cardinals
+Kyle Pitts Sr,Pitts Sr,Kyle,TE,Atlanta Falcons
+George Kittle,Kittle,George,TE,San Francisco 49ers
+Travis Kelce,Kelce,Travis,TE,Kansas City Chiefs
+Colston Loveland,Loveland,Colston,TE,Chicago Bears
+Harold Fannin Jr,Fannin Jr,Harold,TE,Cleveland Browns
+Brock Bowers,Bowers,Brock,TE,Las Vegas Raiders
+Sam LaPorta,LaPorta,Sam,TE,Detroit Lions
+Tucker Kraft,Kraft,Tucker,TE,Green Bay Packers
+Isaiah Likely,Likely,Isaiah,TE,New York Giants
+T.J. Hockenson,Hockenson,T.J.,TE,Minnesota Vikings
+Dalton Kincaid,Kincaid,Dalton,TE,Buffalo Bills
+Nick Folk,Folk,Nick,K,Atlanta Falcons
+Will Reichard,Reichard,Will,K,Minnesota Vikings
+Spencer Shrader,Shrader,Spencer,K,Indianapolis Colts
+Cam Little,Little,Cam,K,Jacksonville Jaguars
+San Francisco 49ers,San Francisco 49ers,,DEF,San Francisco 49ers
+Cincinnati Bengals,Cincinnati Bengals,,DEF,Cincinnati Bengals
+Seattle Seahawks,Seattle Seahawks,,DEF,Seattle Seahawks
+Chicago Bears,Chicago Bears,,DEF,Chicago Bears
+Cleveland Browns,Cleveland Browns,,DEF,Cleveland Browns
+Las Vegas Raiders,Las Vegas Raiders,,DEF,Las Vegas Raiders
+Houston Texans,Houston Texans,,DEF,Houston Texans
+Minnesota Vikings,Minnesota Vikings,,DEF,Minnesota Vikings
+Jacksonville Jaguars,Jacksonville Jaguars,,DEF,Jacksonville Jaguars
