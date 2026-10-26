@@ -39,6 +39,20 @@ def run(week, stats_csv, rules, roster, outdir=HERE):
     unknown = [r["name"] for r in rows if r["name"] not in roster]
     by_position = {p: [] for p in POSITIONS}
 
+    # A row exists only once that player's game has been pulled, and every
+    # pulled row must carry a status. That is what lets a partial week be
+    # topped up later: no row means not yet pulled, and a blank status would
+    # be ambiguous between "played normally" and "not pulled".
+    blank_status = [r["name"] for r in rows if not (r.get("status") or "").strip()]
+    if blank_status:
+        raise ValueError(
+            f"{len(blank_status)} row(s) have a blank status: "
+            f"{', '.join(blank_status[:8])}"
+            f"{' ...' if len(blank_status) > 8 else ''}. "
+            "Use 'active' for a played game, or BYE/DNP/IR. A row with no "
+            "status cannot be told apart from a game not yet pulled."
+        )
+
     for row in rows:
         pos = (row.get("position") or "").strip().upper()
         if pos not in by_position:
@@ -75,7 +89,13 @@ def run(week, stats_csv, rules, roster, outdir=HERE):
             w.writerows(entries)
         written.append((path, len(entries)))
 
-    return written, unknown
+    pulled = {r["name"] for r in rows}
+    pending = {}
+    for name, ref in roster.items():
+        if name not in pulled:
+            pending.setdefault(ref["position"], []).append(name)
+
+    return written, unknown, pending
 
 
 def main():
@@ -86,13 +106,27 @@ def main():
     ap.add_argument("--roster")
     args = ap.parse_args()
 
-    written, unknown = run(args.week, args.stats_csv,
-                           load_rules(args.rules), load_roster(args.roster))
+    written, unknown, pending = run(args.week, args.stats_csv,
+                                    load_rules(args.rules),
+                                    load_roster(args.roster))
 
     for path, n in written:
         print(f"  {os.path.relpath(path, HERE):<28} {n:>3} players")
     if unknown:
         print(f"\nNOT in players.csv ({len(unknown)}): {', '.join(unknown)}")
+
+    if pending:
+        total = sum(len(v) for v in pending.values())
+        print(f"\nSTILL TO PULL for week {args.week} ({total} players):")
+        for pos in POSITIONS:
+            names = sorted(pending.get(pos, []))
+            if names:
+                print(f"  {pos:<4} {len(names):>3}  {', '.join(names)}")
+        print("\nRe-run this command after adding their rows; the week's files "
+              "are rebuilt from the raw file each time.")
+    else:
+        print(f"\nWeek {args.week} complete — every player in players.csv "
+              "has a row.")
 
 
 if __name__ == "__main__":

@@ -1,2 +1,5 @@
 __pycache__/
 *.pyc
+
+# downloaded source PDFs and their extracted text
+gamebooks/

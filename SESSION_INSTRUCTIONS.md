@@ -38,7 +38,9 @@ run_week.py              raw week -> six per-position weekly files
 build_cumulative.py      weekly files -> six cumulative files
 test_scoring.py          26 hand-checkable scoring cases
 test_cumulative.py       14 checks on the summary columns
+fetch_week.py            downloads a week's Game Book PDFs and extracts text
 weeks/_TEMPLATE.csv      blank header row for a raw weekly pull
+gamebooks/weekNN/        downloaded Game Books (not committed)
 QB/ RB/ WR/ TE/ K/ DEF/  one directory per position
 ```
 
@@ -79,12 +81,43 @@ Tested alternatives and why they were rejected:
 - **NFL.com game center** also renders client-side and hides scores.
 
 The Game Book is a static PDF published per game, linked from NFL.com game
-center pages. Its URLs are opaque hashes and cannot be constructed — locate each
-week's games by search. Budget time for 14–16 lookups per week.
-
-The Game Book provides everything the scoring system needs: individual stat
+center pages. It provides everything the scoring system needs: individual stat
 lines, a scoring summary giving **every touchdown with its yardage**, field goal
-distances, final scores for points allowed, and interception returns.
+distances, final scores for points allowed, interception returns, and a
+per-player defensive table with sacks, interceptions, forced fumbles and
+recoveries.
+
+### Downloading them
+
+```
+python3 fetch_week.py 7
+```
+
+This does the whole thing: reads the week's schedule page for every game slug,
+scrapes each game page for its Game Book PDF link, downloads all of them, and
+extracts each to fixed-layout text with `pdftotext`. Output lands in
+`gamebooks/weekNN/`.
+
+Games whose Game Book has not been published yet are reported as **PENDING**
+rather than failing. Re-running skips what is already downloaded and collects
+only the new ones, which is how a partial week (§4, Partial weeks) is topped up.
+
+**This requires `www.nfl.com` and `static.www.nfl.com` to be allowed under
+Settings > Capabilities on claude.ai.** If downloads fail with a 403 CONNECT
+error, that allowance is missing or has been removed — tell the user rather than
+trying to work around it.
+
+Do **not** use the web fetch tool for Game Book PDFs. It only accepts URLs that
+appear in search results, and recent games are not indexed, so it will fail for
+exactly the games being pulled. The shell has no such restriction.
+
+Sources evaluated and rejected:
+- **ESPN box score pages** render client-side; a fetch returns an empty page.
+- **NFL.com game center** also renders client-side and hides scores. It is still
+  used to locate the PDF link, which is present in the raw HTML.
+- **Pro-Football-Reference** has good offensive stats and scoring summaries, but
+  hides its defensive and return tables in HTML comments, so they come back
+  empty. Unusable as a sole source with team defenses on the list.
 
 ### Two rules that are easy to get wrong
 
@@ -101,18 +134,45 @@ touchdown in the same game is a real pattern. `td_50plus` must come from the
 ### Filling the raw file
 
 Copy `weeks/_TEMPLATE.csv` to `weeks/raw-weekNN.csv` and fill one row per
-tracked player who had a game. Columns a position does not use stay blank.
+tracked player whose game has been pulled. Columns a position does not use stay
+blank.
 
-`status` is blank or `active` for a normal week; `BYE`, `DNP`, `IR`,
-`INACTIVE`, `OUT`, or `SUSPENDED` otherwise. **Never put text in a numeric
-column** — the scoring engine will reject the run and name the offending column,
-which is the intended behavior.
+**`status` is mandatory on every row.** Use `active` for a game played, or
+`BYE`, `DNP`, `IR`, `INACTIVE`, `OUT`, `SUSPENDED`. A blank status is rejected,
+because it cannot be told apart from a game not yet pulled.
+
+**Never put text in a numeric column** — the scoring engine will reject the run
+and name the offending column, which is the intended behavior.
+
+### Partial weeks
+
+A week can be pulled before all its games are played. The rule is simply:
+
+- **No row** for a player → that game has not been pulled yet.
+- **Row present** (always with a status) → pulled; leave it alone.
+
+To top up later, append rows for the newly completed games to the same
+`raw-weekNN.csv` and re-run `run_week.py` and `build_cumulative.py`. Both
+rebuild from the raw file, so already-pulled players are not re-fetched and
+nothing is double-counted.
+
+`run_week.py` prints a **STILL TO PULL** list after every run, broken down by
+position, naming exactly which players have no row yet. Use that list rather
+than asking the user to remember which games were covered.
+
+If the user asks for a partial pull, do not ask them to specify what was
+already fetched — the raw file is the record.
 
 `td_50plus` is **per player, not per play**: a 58-yard touchdown pass is a `1`
 for the passer and a `1` for the receiver, since both earn the bonus.
 
-Pull on **Tuesday** unless told otherwise, so Sunday-night and Monday stat
-corrections have settled.
+**Pulls happen on demand only.** There is no schedule and nothing runs
+automatically; a week is pulled when the user asks for it.
+
+When the user does ask, note that stat corrections from Sunday night and Monday
+are usually settled by **Tuesday**. If asked to pull a week earlier than that,
+proceed as asked but mention that late corrections may follow — do not refuse
+or delay.
 
 ---
 
