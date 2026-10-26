@@ -38,8 +38,11 @@ run_week.py              raw week -> six per-position weekly files
 build_cumulative.py      weekly files -> six cumulative files
 test_scoring.py          26 hand-checkable scoring cases
 test_cumulative.py       14 checks on the summary columns
+test_parse_week.py       58 checks on the Game Book reading, one per trap
 fetch_week.py            downloads a week's Game Book PDFs and extracts text
+parse_week.py            Game Books -> the raw weekly file
 weeks/_TEMPLATE.csv      blank header row for a raw weekly pull
+weeks/status-overrides.csv  why a player absent from the Game Book did not play
 gamebooks/weekNN/        downloaded Game Books (not committed)
 QB/ RB/ WR/ TE/ K/ DEF/  one directory per position
 ```
@@ -119,12 +122,26 @@ Sources evaluated and rejected:
   hides its defensive and return tables in HTML comments, so they come back
   empty. Unusable as a sole source with team defenses on the list.
 
-### Two rules that are easy to get wrong
+### Three rules that are easy to get wrong
 
 **Sacks: the box score table is authoritative.** Game Books have been observed
 disagreeing with their own play-by-play on sacks. Use the summary table and
 ignore the play-by-play. This is a settled decision — do not re-litigate it
 weekly.
+
+Take the team's sack count from that table's **Total** row rather than adding
+up the player rows. An unattributed sack is carried on a separate `Team Sacks`
+line that no player row reflects, so a sum silently comes up short. Kansas City
+in week 1: Total said 4, the player rows added to 3, and the team summary's
+`Times thrown` confirmed 4. That same play-by-play narrated five.
+
+**A touchdown can have no yardage.** A fumble recovered in the opponent's end
+zone covers no distance, so it appears as `G.Halton fumble recovery in end
+zone` with none of the usual `N yd. fumble return` wording — easy to skip when
+scanning for touchdowns. Whether it belongs to the defense is settled by that
+team's FUMBLES table: an `OPP-REC` touchdown is a defensive score worth 6; an
+`OWN-REC` touchdown is a player falling on his own team's fumble, which is an
+offensive score and credits the defense with nothing.
 
 **"Long" is not "long touchdown."** A player's long-reception column says
 nothing about whether his touchdown was long. A 50-yard catch and a 13-yard
@@ -170,19 +187,73 @@ Rules learned from the first trial run:
   `J.Williams`). Resolve them against `players.csv` using surname **and team**;
   one game may contain two different players sharing an initial and surname on
   opposite sides.
+- **Initials get lengthened to break ties within a team.** Jacksonville carried
+  both `Bri.Thomas` and `Bry.Thomas` in week 1. Match the abbreviation as a
+  *prefix of the first name*, not merely its first letter, or the stat line
+  lands on the wrong player — and a player whose initial was lengthened will
+  look absent if only the single letter is searched for.
+- **A lateral reads `pass play by`, not `pass from`.** In week 3 Purdy threw
+  two yards to Evans, who lateraled to Samuel for eighty more, and the summary
+  read `D.Samuel 82 yd. pass play by B.Purdy`. The Game Book still credits the
+  quarterback with the passing touchdown, so he takes the 50+ bonus. The
+  intermediate receiver is credited only with his own short reception and takes
+  no bonus, having scored nothing.
 - **`td_50plus` comes from the Scoring Plays section only.** In the trial game
   the longest touchdown was 25 yards, so every value was 0 — despite a 40-yard
   reception appearing in the LG column.
 
 ### Filling the raw file
 
-Copy `weeks/_TEMPLATE.csv` to `weeks/raw-weekNN.csv` and fill one row per
-tracked player whose game has been pulled. Columns a position does not use stay
-blank.
+```
+python3 parse_week.py 6
+```
+
+`parse_week.py` reads every Game Book in `gamebooks/weekNN/`, resolves each
+tracked player against it and writes `weeks/raw-weekNN.csv`. It implements
+every rule in this section, and `test_parse_week.py` asserts each of them
+against the real Game Book fragment it came from, so they survive a rewrite.
+Read the rules anyway: they are what the output has to be checked against when
+a figure looks wrong, and a new Game Book quirk will need the same judgement
+that produced them.
+
+The script cross-checks itself against each document's own team totals — sacks
+against `Times thrown`, interceptions against what the opponent threw, fumble
+recoveries against what the opponent lost, and the scoring plays against the
+final score — and reports any scoring play whose wording it does not recognise
+rather than dropping it silently. That last check is what surfaced the week-5
+end-zone fumble recovery. It exits non-zero when anything needs a human, so a
+clean run is a positive signal rather than merely the absence of a crash.
+
+Doing it by hand instead: copy `weeks/_TEMPLATE.csv` to `weeks/raw-weekNN.csv`
+and fill one row per tracked player whose game has been pulled. Columns a
+position does not use stay blank.
 
 **`status` is mandatory on every row.** Use `active` for a game played, or
 `BYE`, `DNP`, `IR`, `INACTIVE`, `OUT`, `SUSPENDED`. A blank status is rejected,
 because it cannot be told apart from a game not yet pulled.
+
+**Absent from the Game Book is not the same as inactive.** The Not Active list
+names players who dressed and did not play; a player on IR, on the
+Commissioner's Exempt List or otherwise off the gameday roster appears nowhere
+in the document at all — not in the lineup, the substitutions, Did Not Play or
+Not Active. He still needs a status, and the Game Book cannot supply one.
+Confirm the reason outside it and record `IR`, `OUT` or `SUSPENDED`; do not
+guess between them, and do not leave the row as `active`, which would score the
+player a real 0.00 and drag his average down for a game he was ineligible for.
+Every non-active status is excluded from games played alike, so the choice
+affects the displayed label rather than any arithmetic.
+
+Record the answer in `weeks/status-overrides.csv`
+(`name,first_week,last_week,status,note`) rather than editing the raw file,
+because `parse_week.py` rebuilds that file from the Game Books and a hand edit
+is silently lost on the next run — which is exactly how Josh Jacobs briefly
+became a scored 0.00 in week 1. An empty `last_week` means still out. A player
+the Game Book *does* list as inactive is explained by the document, so that
+always wins over an override.
+
+Until an absence is explained, the row is written with a **blank status** on
+purpose: `run_week.py` refuses blanks, which fails loudly instead of inventing
+a zero.
 
 **Never put text in a numeric column** — the scoring engine will reject the run
 and name the offending column, which is the intended behavior.
@@ -222,6 +293,8 @@ or delay.
 ## 5. Running a Week
 
 ```
+python3 fetch_week.py 6
+python3 parse_week.py 6
 python3 run_week.py 6 weeks/raw-week06.csv
 python3 build_cumulative.py
 ```
@@ -234,10 +307,10 @@ in the output, so a later scoring change is re-runnable without re-pulling.
 files exist. It is a full rebuild, not an append — a corrected week-4 stat
 therefore propagates to the totals automatically.
 
-Run both test suites after any change to scoring or the pipeline:
+Run all three test suites after any change to scoring or the pipeline:
 
 ```
-python3 test_scoring.py && python3 test_cumulative.py
+python3 test_scoring.py && python3 test_cumulative.py && python3 test_parse_week.py
 ```
 
 ---
