@@ -131,6 +131,44 @@ nothing about whether his touchdown was long. A 50-yard catch and a 13-yard
 touchdown in the same game is a real pattern. `td_50plus` must come from the
 **scoring summary**, never from a long-yardage column.
 
+### Reading a Game Book into the raw file
+
+The extracted text is fixed-layout. Tables are **two-column: visitor on the
+left, home on the right**, sharing one header line. Track which side is which
+team — mixing them up silently assigns stats to the wrong players.
+
+Sections and what to take:
+
+| Section | Columns used |
+|---|---|
+| `RUSHING` | YDS → `rush_yds`, TD → `rush_td` |
+| `PASSING` | YDS → `pass_yds`, TD → `pass_td`, IN → `int_thrown` |
+| `PASS RECEIVING` | REC → `rec`, YDS → `rec_yds`, TD → `rec_td` |
+| `Scoring Plays` | every TD's yardage → `td_50plus`; FG distances → kicker buckets |
+| `Final Defensive Statistics` | SK, IN, FF, FR per player |
+| `FINAL SCORE` | opponent's score → `pts_allowed` for that defense |
+
+Rules learned from the first trial run:
+
+- **Sack yardage is not rushing.** A quarterback's sacks appear in the PASSING
+  table as `SK/YD`. They are not entered anywhere — this scoring system has no
+  sack penalty for the quarterback — and must never be recorded as rush yards.
+- **A quarterback absent from the RUSHING table has no rush yards**, even
+  though he was sacked. Leave the column blank.
+- **Negative rushing yards are real and they subtract.** Quarterbacks kneeling
+  and receivers losing yards on end-arounds both show up; record the negative
+  value as given.
+- **Non-running-backs get carries.** Receivers appear in the RUSHING table.
+  Their rows use the same schema, so fill both rush and receiving columns.
+- **`TAR` (targets) is not used** by this scoring system. Ignore it.
+- **Names are abbreviated** as initial-plus-surname (`A.St. Brown`,
+  `J.Williams`). Resolve them against `players.csv` using surname **and team**;
+  one game may contain two different players sharing an initial and surname on
+  opposite sides.
+- **`td_50plus` comes from the Scoring Plays section only.** In the trial game
+  the longest touchdown was 25 yards, so every value was 0 — despite a 40-yard
+  reception appearing in the LG column.
+
 ### Filling the raw file
 
 Copy `weeks/_TEMPLATE.csv` to `weeks/raw-weekNN.csv` and fill one row per
