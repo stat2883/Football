@@ -1,0 +1,26 @@
+name,team,status,pass_yds,pass_td,pass_2pt,int_thrown,rush_yds,rush_td,rush_2pt,td_50plus,points
+"Allen, Josh",Buffalo Bills,active,334,2,,0,23,2,,,48.00
+"Burrow, Joe",Cincinnati Bengals,active,254,1,,1,20,0,,,18.70
+"Cousins, Kirk",Las Vegas Raiders,active,160,3,,2,-6,0,,,21.40
+"Daniels, Jayden",Washington Commanders,active,164,2,,0,31,0,,,23.30
+"Goff, Jared",Detroit Lions,active,206,2,,0,2,0,,,22.50
+"Herbert, Justin",Los Angeles Chargers,active,209,1,,1,29,0,,,17.35
+"Jackson, Lamar",Baltimore Ravens,active,324,1,,0,40,1,,1,43.20
+"Lawrence, Trevor",Jacksonville Jaguars,active,245,4,,0,3,0,,,36.55
+"Love, Jordan",Green Bay Packers,active,387,2,,1,0,0,,1,40.35
+"Mahomes, Patrick",Kansas City Chiefs,active,184,2,,1,23,1,,,27.50
+"Maye, Drake",New England Patriots,active,178,1,,3,47,0,,,13.60
+"Mayfield, Baker",Tampa Bay Buccaneers,active,216,0,,0,30,1,,,19.80
+"Murray, Kyler",Minnesota Vikings,active,18,0,,1,9,0,,,-0.20
+"Prescott, Dak",Dallas Cowboys,active,175,2,,1,14,0,,,20.15
+"Purdy, Brock",San Francisco 49ers,active,205,3,,1,29,0,,,29.15
+"Rodgers, Aaron",Pittsburgh Steelers,active,221,1,,0,-3,0,,,16.75
+"Shough, Tyler",New Orleans Saints,active,410,3,,2,8,0,,,42.30
+"Smith, Geno",New York Jets,active,215,0,,0,7,0,,,11.45
+"Stafford, Matthew",Los Angeles Rams,active,155,0,,1,-1,0,,,5.65
+"Stroud, C.J.",Houston Texans,active,274,2,,0,15,0,,,27.20
+"Watson, Deshaun",Cleveland Browns,active,205,1,,1,38,0,,,18.05
+"Williams, Caleb",Chicago Bears,active,269,2,,0,65,2,,,43.95
+"Willis, Malik",Miami Dolphins,active,220,0,,1,39,1,,,18.90
+"Young, Bryce",Carolina Panthers,active,361,3,,1,10,1,,1,52.05
+"Penix Jr, Michael",Atlanta Falcons,INACTIVE,,,,,,,,,0.00
