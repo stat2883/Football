@@ -1,0 +1,26 @@
+name,team,status,pass_yds,pass_td,pass_2pt,int_thrown,rush_yds,rush_td,rush_2pt,td_50plus,points
+"Allen, Josh",Buffalo Bills,active,253,1,,1,4,1,,,23.05
+"Burrow, Joe",Cincinnati Bengals,active,428,1,,2,6,1,,,37.00
+"Cousins, Kirk",Las Vegas Raiders,active,365,2,1,1,,,,,35.25
+"Goff, Jared",Detroit Lions,active,412,1,,0,,,,,33.60
+"Herbert, Justin",Los Angeles Chargers,active,189,1,,2,40,0,,,15.45
+"Jackson, Lamar",Baltimore Ravens,active,222,2,,0,20,0,,,25.10
+"Lawrence, Trevor",Jacksonville Jaguars,active,227,1,,0,0,0,,,17.35
+"Love, Jordan",Green Bay Packers,active,197,2,,1,-8,0,,,19.05
+"Mahomes, Patrick",Kansas City Chiefs,active,225,2,,0,0,0,,,23.25
+"Maye, Drake",New England Patriots,active,269,3,1,1,54,0,,,36.85
+"Murray, Kyler",Minnesota Vikings,active,247,0,,0,16,0,,,13.95
+"Penix Jr, Michael",Atlanta Falcons,active,223,1,,0,-2,0,,,16.95
+"Prescott, Dak",Dallas Cowboys,active,335,1,,0,7,0,,,28.45
+"Purdy, Brock",San Francisco 49ers,active,218,2,,0,29,0,,1,31.80
+"Rodgers, Aaron",Pittsburgh Steelers,active,299,3,,2,,,,,28.95
+"Shough, Tyler",New Orleans Saints,active,286,1,,0,5,0,,,20.80
+"Smith, Geno",New York Jets,active,119,1,,0,,,,1,17.95
+"Stafford, Matthew",Los Angeles Rams,active,317,0,,2,10,0,,,17.85
+"Stroud, C.J.",Houston Texans,active,347,2,,0,12,0,,,35.55
+"Watson, Deshaun",Cleveland Browns,active,268,1,,1,22,0,,,19.60
+"Willis, Malik",Miami Dolphins,active,85,0,,0,11,0,,,5.35
+"Young, Bryce",Carolina Panthers,active,329,2,,0,3,0,,,33.75
+"Daniels, Jayden",Washington Commanders,INACTIVE,,,,,,,,,0.00
+"Mayfield, Baker",Tampa Bay Buccaneers,INACTIVE,,,,,,,,,0.00
+"Williams, Caleb",Chicago Bears,INACTIVE,,,,,,,,,0.00

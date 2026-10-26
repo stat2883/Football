@@ -1,13 +1,13 @@
-name,team,position,Week01,Week02,Week03,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-"McBride, Trey",Arizona Cardinals,TE,24.50,18.10,16.50,59.10,19.70,4.23
-"Kelce, Travis",Kansas City Chiefs,TE,10.10,30.10,13.90,54.10,18.03,10.62
-"Kincaid, Dalton",Buffalo Bills,TE,23.00,22.50,5.80,51.30,17.10,9.79
-"Kittle, George",San Francisco 49ers,TE,3.20,18.00,26.20,47.40,15.80,11.66
-"Likely, Isaiah",New York Giants,TE,27.80,8.30,3.30,39.40,13.13,12.95
-"Fannin Jr, Harold",Cleveland Browns,TE,4.10,10.40,24.10,38.60,12.87,10.23
-"LaPorta, Sam",Detroit Lions,TE,9.80,17.20,7.40,34.40,11.47,5.11
-"Bowers, Brock",Las Vegas Raiders,TE,INACTIVE,INACTIVE,32.60,32.60,32.60,
-"Hockenson, T.J.",Minnesota Vikings,TE,13.60,5.90,3.10,22.60,7.53,5.44
-"Kraft, Tucker",Green Bay Packers,TE,9.50,3.50,6.60,19.60,6.53,3.00
-"Loveland, Colston",Chicago Bears,TE,0.00,1.30,7.10,8.40,2.80,3.78
-"Pitts Sr, Kyle",Atlanta Falcons,TE,0.00,2.50,1.50,4.00,1.33,1.26
+name,team,position,Week01,Week02,Week03,Week04,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+"Kittle, George",San Francisco 49ers,TE,3.20,18.00,26.20,23.00,70.40,17.60,10.18
+"McBride, Trey",Arizona Cardinals,TE,24.50,18.10,16.50,10.10,69.20,17.30,5.91
+"Kelce, Travis",Kansas City Chiefs,TE,10.10,30.10,13.90,3.50,57.60,14.40,11.31
+"LaPorta, Sam",Detroit Lions,TE,9.80,17.20,7.40,22.40,56.80,14.20,6.88
+"Bowers, Brock",Las Vegas Raiders,TE,INACTIVE,INACTIVE,32.60,20.60,53.20,26.60,8.49
+"Kincaid, Dalton",Buffalo Bills,TE,23.00,22.50,5.80,1.70,53.00,13.25,11.10
+"Likely, Isaiah",New York Giants,TE,27.80,8.30,3.30,13.60,53.00,13.25,10.57
+"Hockenson, T.J.",Minnesota Vikings,TE,13.60,5.90,3.10,29.90,52.50,13.12,12.03
+"Fannin Jr, Harold",Cleveland Browns,TE,4.10,10.40,24.10,11.70,50.30,12.57,8.37
+"Kraft, Tucker",Green Bay Packers,TE,9.50,3.50,6.60,16.50,36.10,9.03,5.55
+"Loveland, Colston",Chicago Bears,TE,0.00,1.30,7.10,11.70,20.10,5.02,5.42
+"Pitts Sr, Kyle",Atlanta Falcons,TE,0.00,2.50,1.50,7.70,11.70,2.92,3.35

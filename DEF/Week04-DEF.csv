@@ -1,0 +1,10 @@
+name,team,status,def_int,def_sack,def_fum_rec,def_safety,def_td,def_int_ret_yds,def_fum_ret_td_yds,def_td_50plus,pts_allowed,points
+Chicago Bears,Chicago Bears,active,0,3,0,0,0,0,0,0,12,14.00
+Cincinnati Bengals,Cincinnati Bengals,active,0,4,0,0,0,0,0,0,22,12.00
+Cleveland Browns,Cleveland Browns,active,2,5,0,0,0,0,0,0,24,21.00
+Houston Texans,Houston Texans,active,0,3,0,0,0,0,0,0,34,9.00
+Jacksonville Jaguars,Jacksonville Jaguars,active,2,2,0,0,0,50,0,0,17,20.00
+Las Vegas Raiders,Las Vegas Raiders,active,0,2,0,0,0,0,0,0,30,6.00
+Minnesota Vikings,Minnesota Vikings,active,0,2,1,0,0,0,0,0,10,14.00
+San Francisco 49ers,San Francisco 49ers,active,0,0,1,0,0,0,0,0,14,6.00
+Seattle Seahawks,Seattle Seahawks,active,2,4,2,0,0,20,0,0,23,26.00
