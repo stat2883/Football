@@ -104,6 +104,16 @@ case("returner gets 6 for a kick return TD", 6.00,
      name="t", position="WR", st_ret_td=1)
 
 
+# --- negative yardage subtracts, never floored at zero ----------------------
+# 300 pass (15.0) + 300-bonus (5) + (-1) rush (-0.1) = 19.9
+case("negative rushing yards subtract", 19.90,
+     name="t", position="QB", pass_yds=300, rush_yds=-1)
+# A receiver losing yards on an end-around: 4 rec (4) + 40 rec yds (4.0)
+# + (-3) rush (-0.3) = 7.7
+case("negative yards for a receiver subtract", 7.70,
+     name="t", position="WR", rec=4, rec_yds=40, rush_yds=-3)
+
+
 # --- status column is inert ------------------------------------------------
 # A labelled bye week scores 0 and does not raise.
 case("BYE status scores zero without error", 0.00,

@@ -153,6 +153,11 @@ Rules learned from the first trial run:
 - **Sack yardage is not rushing.** A quarterback's sacks appear in the PASSING
   table as `SK/YD`. They are not entered anywhere — this scoring system has no
   sack penalty for the quarterback — and must never be recorded as rush yards.
+- **Use gross passing yards from the PASSING table, not net.** The team summary
+  further down lists `NET YARDS PASSING`, which subtracts sack yardage. In the
+  trial game the quarterback's table figure was 274 while net read 264. Take the
+  per-player PASSING table value; the net figure is a team total and is wrong
+  for scoring.
 - **A quarterback absent from the RUSHING table has no rush yards**, even
   though he was sacked. Leave the column blank.
 - **Negative rushing yards are real and they subtract.** Quarterbacks kneeling
@@ -245,6 +250,8 @@ mid-season rule change means editing the JSON and re-running every week.
 Decisions already settled, recorded so they are not re-asked:
 
 - Yardage is continuous at 0.01 resolution — 87 rushing yards is 8.7, not 8.
+- **Negative yardage produces negative points.** It is not floored at zero. A
+  quarterback kneeling out the clock for −1 rushing yard scores −0.1.
 - Yardage bonuses: **highest tier only** within each group. Passing bonuses and
   rush/receiving bonuses are separate groups and **do stack**, so a QB can earn
   both in one game.
