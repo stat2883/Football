@@ -18,10 +18,14 @@ this file, the user wins for that session — this file is the default, not a ca
    see §7 — none should be requested.
 2. Read this file.
 3. Read `players.csv` and `scoring.json`.
+4. A week is four commands (§5). The repo does the pulling, the reading and
+   the scoring; none of it needs doing by hand.
 
-Do **not** use web search or `web_fetch` to reach the repo itself. Web search
-**is** required for pulling weekly statistics (§4) — that restriction applies
-only to reaching this repository.
+Do **not** use web search or `web_fetch` to reach the repo itself — that
+restriction applies only to this repository. The Game Books come from the
+shell (§4), not from web search. Web search is still the right tool for the
+one thing a Game Book cannot say: why a player who is absent from it
+altogether did not play.
 
 If the repo cannot be reached, say so plainly rather than proceeding from memory.
 
@@ -288,25 +292,45 @@ start of a new season; it reads team names from the Game Books on disk, so run
 A week can be pulled before all its games are played. The rule is simply:
 
 - **No row** for a player → that game has not been pulled yet.
-- **Row present** (always with a status) → pulled; leave it alone.
+- **Row present** (always with a status) → pulled.
 
-To top up later, append rows for the newly completed games to the same
-`raw-weekNN.csv` and re-run `run_week.py` and `build_cumulative.py`. Both
-rebuild from the raw file, so already-pulled players are not re-fetched and
-nothing is double-counted.
+To top up later, re-run the same four commands:
 
-`run_week.py` prints a **STILL TO PULL** list after every run, broken down by
-position, naming exactly which players have no row yet. Use that list rather
-than asking the user to remember which games were covered.
+```
+python3 fetch_week.py 6      # collects only the newly published Game Books
+python3 parse_week.py 6      # rebuilds the raw file from everything present
+python3 run_week.py 6 weeks/raw-week06.csv
+python3 build_cumulative.py
+```
 
-If the user asks for a partial pull, do not ask them to specify what was
-already fetched — the raw file is the record.
+`fetch_week.py` skips Game Books already downloaded, and `parse_week.py`
+rebuilds `raw-weekNN.csv` from whatever is in `gamebooks/weekNN/`. Nothing is
+appended and nothing is double-counted.
+
+**Do not hand-edit the raw file to add the new games.** It is a build product
+now, and the next `parse_week.py` run overwrites it. The one thing it cannot
+derive — why a player absent from the Game Book did not play — belongs in
+`weeks/status-overrides.csv`, which survives the rebuild.
+
+Two different reports name what is outstanding, and they answer different
+questions:
+
+- `parse_week.py` lists **scheduled teams whose Game Book is missing**, which
+  is what makes the week partial.
+- `run_week.py` lists **players with no row** under STILL TO PULL, broken down
+  by position.
+
+Use those rather than asking the user to remember which games were covered. If
+the user asks for a partial pull, do not ask them to specify what was already
+fetched — the gamebooks directory and the raw file are the record.
 
 `td_50plus` is **per player, not per play**: a 58-yard touchdown pass is a `1`
 for the passer and a `1` for the receiver, since both earn the bonus.
 
-**Pulls happen on demand only.** There is no schedule and nothing runs
-automatically; a week is pulled when the user asks for it.
+**Pulls happen on demand only.** Nothing runs automatically and there is no
+cadence; a week is pulled when the user asks for it. (`schedule-2026.csv` is
+the league's fixture list, used to identify byes — it is not a schedule for
+running anything.)
 
 When the user does ask, note that stat corrections from Sunday night and Monday
 are usually settled by **Tuesday**. If asked to pull a week earlier than that,
