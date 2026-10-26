@@ -1,10 +1,10 @@
-name,team,position,Week01,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-Cincinnati Bengals,Cincinnati Bengals,DEF,32.70,32.70,32.70,
-Jacksonville Jaguars,Jacksonville Jaguars,DEF,28.20,28.20,28.20,
-Las Vegas Raiders,Las Vegas Raiders,DEF,26.00,26.00,26.00,
-Seattle Seahawks,Seattle Seahawks,DEF,26.00,26.00,26.00,
-Minnesota Vikings,Minnesota Vikings,DEF,20.80,20.80,20.80,
-San Francisco 49ers,San Francisco 49ers,DEF,16.00,16.00,16.00,
-Chicago Bears,Chicago Bears,DEF,15.00,15.00,15.00,
-Houston Texans,Houston Texans,DEF,6.00,6.00,6.00,
-Cleveland Browns,Cleveland Browns,DEF,3.00,3.00,3.00,
+name,team,position,Week01,Week02,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+Cincinnati Bengals,Cincinnati Bengals,DEF,32.70,22.00,54.70,27.35,7.57
+Las Vegas Raiders,Las Vegas Raiders,DEF,26.00,25.90,51.90,25.95,0.07
+Minnesota Vikings,Minnesota Vikings,DEF,20.80,27.90,48.70,24.35,5.02
+Seattle Seahawks,Seattle Seahawks,DEF,26.00,19.00,45.00,22.50,4.95
+Jacksonville Jaguars,Jacksonville Jaguars,DEF,28.20,6.00,34.20,17.10,15.70
+San Francisco 49ers,San Francisco 49ers,DEF,16.00,17.00,33.00,16.50,0.71
+Chicago Bears,Chicago Bears,DEF,15.00,14.00,29.00,14.50,0.71
+Houston Texans,Houston Texans,DEF,6.00,18.00,24.00,12.00,8.49
+Cleveland Browns,Cleveland Browns,DEF,3.00,17.50,20.50,10.25,10.25

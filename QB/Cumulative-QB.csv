@@ -1,26 +1,26 @@
-name,team,position,Week01,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-"Young, Bryce",Carolina Panthers,QB,52.05,52.05,52.05,
-"Allen, Josh",Buffalo Bills,QB,48.00,48.00,48.00,
-"Williams, Caleb",Chicago Bears,QB,43.95,43.95,43.95,
-"Jackson, Lamar",Baltimore Ravens,QB,43.20,43.20,43.20,
-"Shough, Tyler",New Orleans Saints,QB,42.30,42.30,42.30,
-"Love, Jordan",Green Bay Packers,QB,40.35,40.35,40.35,
-"Lawrence, Trevor",Jacksonville Jaguars,QB,36.55,36.55,36.55,
-"Purdy, Brock",San Francisco 49ers,QB,29.15,29.15,29.15,
-"Mahomes, Patrick",Kansas City Chiefs,QB,27.50,27.50,27.50,
-"Stroud, C.J.",Houston Texans,QB,27.20,27.20,27.20,
-"Daniels, Jayden",Washington Commanders,QB,23.30,23.30,23.30,
-"Goff, Jared",Detroit Lions,QB,22.50,22.50,22.50,
-"Cousins, Kirk",Las Vegas Raiders,QB,21.40,21.40,21.40,
-"Prescott, Dak",Dallas Cowboys,QB,20.15,20.15,20.15,
-"Mayfield, Baker",Tampa Bay Buccaneers,QB,19.80,19.80,19.80,
-"Willis, Malik",Miami Dolphins,QB,18.90,18.90,18.90,
-"Burrow, Joe",Cincinnati Bengals,QB,18.70,18.70,18.70,
-"Watson, Deshaun",Cleveland Browns,QB,18.05,18.05,18.05,
-"Herbert, Justin",Los Angeles Chargers,QB,17.35,17.35,17.35,
-"Rodgers, Aaron",Pittsburgh Steelers,QB,16.75,16.75,16.75,
-"Maye, Drake",New England Patriots,QB,13.60,13.60,13.60,
-"Smith, Geno",New York Jets,QB,11.45,11.45,11.45,
-"Stafford, Matthew",Los Angeles Rams,QB,5.65,5.65,5.65,
-"Penix Jr, Michael",Atlanta Falcons,QB,INACTIVE,,,
-"Murray, Kyler",Minnesota Vikings,QB,-0.20,-0.20,-0.20,
+name,team,position,Week01,Week02,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+"Allen, Josh",Buffalo Bills,QB,48.00,49.30,97.30,48.65,0.92
+"Young, Bryce",Carolina Panthers,QB,52.05,32.95,85.00,42.50,13.51
+"Mahomes, Patrick",Kansas City Chiefs,QB,27.50,43.80,71.30,35.65,11.53
+"Shough, Tyler",New Orleans Saints,QB,42.30,26.90,69.20,34.60,10.89
+"Goff, Jared",Detroit Lions,QB,22.50,46.05,68.55,34.27,16.65
+"Purdy, Brock",San Francisco 49ers,QB,29.15,35.35,64.50,32.25,4.38
+"Jackson, Lamar",Baltimore Ravens,QB,43.20,19.15,62.35,31.18,17.01
+"Prescott, Dak",Dallas Cowboys,QB,20.15,40.55,60.70,30.35,14.42
+"Love, Jordan",Green Bay Packers,QB,40.35,19.25,59.60,29.80,14.92
+"Williams, Caleb",Chicago Bears,QB,43.95,9.10,53.05,26.53,24.64
+"Stroud, C.J.",Houston Texans,QB,27.20,25.55,52.75,26.38,1.17
+"Cousins, Kirk",Las Vegas Raiders,QB,21.40,28.75,50.15,25.07,5.20
+"Watson, Deshaun",Cleveland Browns,QB,18.05,32.10,50.15,25.08,9.93
+"Stafford, Matthew",Los Angeles Rams,QB,5.65,43.25,48.90,24.45,26.59
+"Lawrence, Trevor",Jacksonville Jaguars,QB,36.55,8.05,44.60,22.30,20.15
+"Willis, Malik",Miami Dolphins,QB,18.90,22.45,41.35,20.67,2.51
+"Daniels, Jayden",Washington Commanders,QB,23.30,17.70,41.00,20.50,3.96
+"Burrow, Joe",Cincinnati Bengals,QB,18.70,22.25,40.95,20.48,2.51
+"Mayfield, Baker",Tampa Bay Buccaneers,QB,19.80,16.00,35.80,17.90,2.69
+"Smith, Geno",New York Jets,QB,11.45,20.05,31.50,15.75,6.08
+"Herbert, Justin",Los Angeles Chargers,QB,17.35,11.80,29.15,14.58,3.92
+"Rodgers, Aaron",Pittsburgh Steelers,QB,16.75,7.85,24.60,12.30,6.29
+"Maye, Drake",New England Patriots,QB,13.60,10.10,23.70,11.85,2.47
+"Penix Jr, Michael",Atlanta Falcons,QB,INACTIVE,INACTIVE,,,
+"Murray, Kyler",Minnesota Vikings,QB,-0.20,INACTIVE,-0.20,-0.20,
