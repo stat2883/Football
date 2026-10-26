@@ -1,33 +1,33 @@
-name,team,position,Week01,Week02,Week03,Week04,Week05,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-"Gibbs, Jahmyr",Detroit Lions,RB,40.60,26.30,44.40,17.70,42.70,171.70,34.34,11.75
-"Walker III, Kenneth",Kansas City Chiefs,RB,45.10,28.80,21.30,35.90,BYE,131.10,32.77,10.15
-"Warren, Jaylen",Pittsburgh Steelers,RB,12.30,9.70,25.60,18.60,53.80,120.00,24.00,17.76
-"Henry, Derrick",Baltimore Ravens,RB,40.30,17.70,21.90,15.90,24.00,119.80,23.96,9.69
-"Williams, Kyren",Los Angeles Rams,RB,15.50,17.70,24.80,39.70,19.60,117.30,23.46,9.71
-"Cook, James",Buffalo Bills,RB,9.90,25.90,26.40,16.30,29.80,108.30,21.66,8.27
-"Taylor, Jonathan",Indianapolis Colts,RB,30.10,32.20,9.20,22.70,11.20,105.40,21.08,10.56
-"Williams, Javonte",Dallas Cowboys,RB,24.20,8.00,21.30,31.30,14.20,99.00,19.80,9.01
-"McCaffrey, Christian",San Francisco 49ers,RB,13.80,22.60,24.60,16.00,17.30,94.30,18.86,4.56
-"Jeanty, Ashton",Las Vegas Raiders,RB,37.70,10.30,12.30,21.60,10.70,92.60,18.52,11.67
-"Swift, D'Andre",Chicago Bears,RB,37.40,14.90,10.80,9.40,17.30,89.80,17.96,11.32
-"Hubbard, Chuba",Carolina Panthers,RB,23.70,14.40,18.00,30.90,BYE,87.00,21.75,7.20
-"Irving, Bucky",Tampa Bay Buccaneers,RB,22.30,13.00,7.80,6.10,36.50,85.70,17.14,12.53
-"Jones Sr, Aaron",Minnesota Vikings,RB,10.00,15.50,14.20,19.80,25.70,85.20,17.04,5.97
-"Brown, Chase",Cincinnati Bengals,RB,18.80,11.20,8.90,19.10,9.00,67.00,13.40,5.15
-"Tuten, Bhayshul",Jacksonville Jaguars,RB,9.80,14.20,17.00,11.10,11.60,63.70,12.74,2.87
-"Stevenson, Rhamondre",New England Patriots,RB,14.50,5.60,6.80,18.40,17.50,62.80,12.56,6.00
-"Hampton, Omarion",Los Angeles Chargers,RB,10.30,22.50,5.60,13.30,4.90,56.60,11.32,7.14
-"Judkins, Quinshon",Cleveland Browns,RB,7.00,9.80,9.90,21.60,8.00,56.30,11.26,5.91
-"Skattebo, Cam",New York Giants,RB,14.10,9.50,16.00,7.60,9.10,56.30,11.26,3.59
-"Gordon II, Ollie",Miami Dolphins,RB,0.00,0.70,14.50,23.00,14.80,53.00,10.60,9.96
-"Hall, Breece",New York Jets,RB,24.80,14.20,8.50,INACTIVE,INACTIVE,47.50,15.83,8.27
-"Montgomery, David",Houston Texans,RB,28.90,4.40,6.80,4.30,1.10,45.50,9.10,11.25
-"Corum, Blake",Los Angeles Rams,RB,5.40,10.20,3.50,3.10,16.20,38.40,7.68,5.54
-"Kamara, Alvin",New Orleans Saints,RB,INACTIVE,7.20,5.10,22.80,2.60,37.70,9.43,9.11
-"Dobbins, J.K.",Denver Broncos,RB,3.60,3.60,6.30,7.20,15.40,36.10,7.22,4.85
-"Allgeier, Tyler",Arizona Cardinals,RB,9.00,3.90,4.90,12.90,3.60,34.30,6.86,4.01
-"Etienne Jr, Travis",New Orleans Saints,RB,14.80,5.10,9.00,IR,IR,28.90,9.63,4.88
-"Henderson, TreVeyon",New England Patriots,RB,INACTIVE,13.60,3.90,4.20,4.80,26.50,6.62,4.67
-"Hill, Justice",Baltimore Ravens,RB,3.80,3.80,3.30,4.50,9.80,25.20,5.04,2.69
-"Barkley, Saquon",Philadelphia Eagles,RB,9.00,3.00,9.00,2.00,INACTIVE,23.00,5.75,3.77
-"Jacobs, Josh",Green Bay Packers,RB,OUT,OUT,OUT,OUT,OUT,,,
+name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+"Gibbs, Jahmyr",Detroit Lions,RB,40.60,26.30,44.40,17.70,42.70,BYE,171.70,34.34,11.75
+"Walker III, Kenneth",Kansas City Chiefs,RB,45.10,28.80,21.30,35.90,BYE,32.90,164.00,32.80,8.79
+"Cook, James",Buffalo Bills,RB,9.90,25.90,26.40,16.30,29.80,27.30,135.60,22.60,7.75
+"Taylor, Jonathan",Indianapolis Colts,RB,30.10,32.20,9.20,22.70,11.20,26.10,131.50,21.92,9.67
+"McCaffrey, Christian",San Francisco 49ers,RB,13.80,22.60,24.60,16.00,17.30,35.70,130.00,21.67,7.99
+"Warren, Jaylen",Pittsburgh Steelers,RB,12.30,9.70,25.60,18.60,53.80,9.80,129.80,21.63,16.91
+"Williams, Kyren",Los Angeles Rams,RB,15.50,17.70,24.80,39.70,19.60,9.70,127.00,21.17,10.34
+"Henry, Derrick",Baltimore Ravens,RB,40.30,17.70,21.90,15.90,24.00,7.00,126.80,21.13,11.09
+"Swift, D'Andre",Chicago Bears,RB,37.40,14.90,10.80,9.40,17.30,23.00,112.80,18.80,10.33
+"Williams, Javonte",Dallas Cowboys,RB,24.20,8.00,21.30,31.30,14.20,13.00,112.00,18.67,8.52
+"Hubbard, Chuba",Carolina Panthers,RB,23.70,14.40,18.00,30.90,BYE,24.10,111.10,22.22,6.33
+"Jeanty, Ashton",Las Vegas Raiders,RB,37.70,10.30,12.30,21.60,10.70,15.80,108.40,18.07,10.50
+"Irving, Bucky",Tampa Bay Buccaneers,RB,22.30,13.00,7.80,6.10,36.50,6.90,92.60,15.43,11.96
+"Tuten, Bhayshul",Jacksonville Jaguars,RB,9.80,14.20,17.00,11.10,11.60,24.70,88.40,14.73,5.52
+"Jones Sr, Aaron",Minnesota Vikings,RB,10.00,15.50,14.20,19.80,25.70,BYE,85.20,17.04,5.97
+"Brown, Chase",Cincinnati Bengals,RB,18.80,11.20,8.90,19.10,9.00,BYE,67.00,13.40,5.15
+"Stevenson, Rhamondre",New England Patriots,RB,14.50,5.60,6.80,18.40,17.50,3.60,66.40,11.07,6.49
+"Hampton, Omarion",Los Angeles Chargers,RB,10.30,22.50,5.60,13.30,4.90,7.90,64.50,10.75,6.54
+"Judkins, Quinshon",Cleveland Browns,RB,7.00,9.80,9.90,21.60,8.00,INACTIVE,56.30,11.26,5.91
+"Skattebo, Cam",New York Giants,RB,14.10,9.50,16.00,7.60,9.10,0.00,56.30,9.38,5.61
+"Gordon II, Ollie",Miami Dolphins,RB,0.00,0.70,14.50,23.00,14.80,BYE,53.00,10.60,9.96
+"Kamara, Alvin",New Orleans Saints,RB,INACTIVE,7.20,5.10,22.80,2.60,14.90,52.60,10.52,8.26
+"Corum, Blake",Los Angeles Rams,RB,5.40,10.20,3.50,3.10,16.20,14.00,52.40,8.73,5.58
+"Dobbins, J.K.",Denver Broncos,RB,3.60,3.60,6.30,7.20,15.40,13.60,49.70,8.28,5.06
+"Hall, Breece",New York Jets,RB,24.80,14.20,8.50,INACTIVE,INACTIVE,INACTIVE,47.50,15.83,8.27
+"Montgomery, David",Houston Texans,RB,28.90,4.40,6.80,4.30,1.10,INACTIVE,45.50,9.10,11.25
+"Allgeier, Tyler",Arizona Cardinals,RB,9.00,3.90,4.90,12.90,3.60,5.80,40.10,6.68,3.61
+"Henderson, TreVeyon",New England Patriots,RB,INACTIVE,13.60,3.90,4.20,4.80,5.00,31.50,6.30,4.10
+"Hill, Justice",Baltimore Ravens,RB,3.80,3.80,3.30,4.50,9.80,3.90,29.10,4.85,2.45
+"Etienne Jr, Travis",New Orleans Saints,RB,14.80,5.10,9.00,IR,IR,IR,28.90,9.63,4.88
+"Barkley, Saquon",Philadelphia Eagles,RB,9.00,3.00,9.00,2.00,INACTIVE,INACTIVE,23.00,5.75,3.77
+"Jacobs, Josh",Green Bay Packers,RB,OUT,OUT,OUT,OUT,OUT,OUT,,,

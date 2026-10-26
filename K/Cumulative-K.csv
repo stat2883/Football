@@ -1,5 +1,5 @@
-name,team,position,Week01,Week02,Week03,Week04,Week05,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-"Shrader, Spencer",Indianapolis Colts,K,11.00,19.00,22.00,23.00,27.00,102.00,20.40,5.98
-"Reichard, Will",Minnesota Vikings,K,11.00,11.00,23.00,23.00,23.00,91.00,18.20,6.57
-"Little, Cam",Jacksonville Jaguars,K,18.00,10.00,10.00,19.00,12.00,69.00,13.80,4.38
-"Folk, Nick",Atlanta Falcons,K,14.00,5.00,14.00,15.00,15.00,63.00,12.60,4.28
+name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+"Shrader, Spencer",Indianapolis Colts,K,11.00,19.00,22.00,23.00,27.00,12.00,114.00,19.00,6.36
+"Reichard, Will",Minnesota Vikings,K,11.00,11.00,23.00,23.00,23.00,BYE,91.00,18.20,6.57
+"Little, Cam",Jacksonville Jaguars,K,18.00,10.00,10.00,19.00,12.00,18.00,87.00,14.50,4.28
+"Folk, Nick",Atlanta Falcons,K,14.00,5.00,14.00,15.00,15.00,2.00,65.00,10.83,5.78

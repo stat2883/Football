@@ -11,7 +11,8 @@ no gamebooks/ directory present.
 
 import sys
 
-from parse_week import (EZ_REC, FG, PASS_TD, RET_TD, RUN_TD, TWO_PT, XP_KICK,
+from parse_week import (BLOCK_RET, EZ_REC, FG, PASS_TD, RET_TD, RUN_TD,
+                        TWO_PT, XP_KICK,
                         KNOWN_FORMS, abbrev_match, bare_surname, defense_row,
                         offense_row, one_col_table, override_for,
                         split_name_stats, two_col_section, build,
@@ -121,6 +122,10 @@ def test_scoring_play_forms():
     m = EZ_REC.match("G.Halton fumble recovery in end zone (E.Pineiro kick)")
     check("end-zone recovery has no yardage", "G.Halton", m.group(1))
 
+    # Week 6, Tennessee: a blocked punt returned for a score.
+    m = BLOCK_RET.match("O.Oladejo 14 yd. return of blocked punt (J.Slye kick)")
+    check("blocked punt return", ("O.Oladejo", "14"), (m.group(1), m.group(2)))
+
     # Week 3, Green Bay: a two-point pass names passer then receiver.
     m = TWO_PT.search("Bi.Robinson 2 yd. run (M.Penix-C.Blair pass) (8-67, 4:45)")
     check("two-point passer", "M.Penix", m.group(1))
@@ -135,6 +140,7 @@ def test_scoring_play_forms():
     # Every form above must be recognised by the verifier, or the play
     # would be reported as unknown rather than scored.
     for desc in ("D.Samuel 82 yd. pass play by B.Purdy (E.Pineiro kick)",
+                 "O.Oladejo 14 yd. return of blocked punt (J.Slye kick)",
                  "G.Halton fumble recovery in end zone (E.Pineiro kick)",
                  "Penalty on J.Alt enforced in end zone for a Safety",
                  "M.Price 86 yd. punt return (W.Reichard kick)"):
@@ -241,12 +247,26 @@ def test_defense_aggregates():
     check("short return earns no long bonus", 0, row["def_td_50plus"])
 
     # A special-teams return touchdown pays the returner, never the
-    # defense (week 5, Minnesota's 86-yard punt return).
-    g["scoring_plays"] = [{"team": "Bengals",
-                           "desc": "M.Price 86 yd. punt return (W.Reichard kick)"}]
-    row, problems = blank_row(), []
-    defense_row(row, g, "home", "Cincinnati Bengals", problems)
-    check("punt return TD does not credit the defense", 0, row["def_td"])
+    # defense (week 5, Minnesota's 86-yard punt return), and the same
+    # holds for a blocked kick returned for a score (week 6, Tennessee)
+    # even though the block itself was a defensive play.
+    for desc in ("M.Price 86 yd. punt return (W.Reichard kick)",
+                 "O.Oladejo 14 yd. return of blocked punt (J.Slye kick)"):
+        g["scoring_plays"] = [{"team": "Bengals", "desc": desc}]
+        row, problems = blank_row(), []
+        defense_row(row, g, "home", "Cincinnati Bengals", problems)
+        check(f"{desc[:18]!r} does not credit the defense", 0, row["def_td"])
+        check(f"{desc[:18]!r} raises no complaint", [], problems)
+
+    # The returner does collect it.
+    g2 = {"file": "t.txt", "home_rushing": [], "home_passing": [],
+          "home_receiving": [], "home_punt_ret": [], "home_ko_ret": [],
+          "scoring_plays": [{"team": "Titans",
+                             "desc": "O.Oladejo 14 yd. return of blocked punt (J.Slye kick)"}]}
+    row = blank_row()
+    offense_row(row, g2, "home", "RB", "Oluwafemi", "Oladejo")
+    check("blocked kick return pays the returner", 1, row["st_ret_td"])
+    check("and is not a long touchdown at 14 yards", "", row["td_50plus"])
 
 
 def test_status_overrides():

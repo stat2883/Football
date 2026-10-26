@@ -1,10 +1,10 @@
-name,team,position,Week01,Week02,Week03,Week04,Week05,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-Minnesota Vikings,Minnesota Vikings,DEF,20.80,27.90,27.00,14.00,18.40,108.10,21.62,5.86
-Seattle Seahawks,Seattle Seahawks,DEF,26.00,19.00,6.00,26.00,20.00,97.00,19.40,8.17
-Cincinnati Bengals,Cincinnati Bengals,DEF,32.70,22.00,10.10,12.00,18.70,95.50,19.10,9.01
-Jacksonville Jaguars,Jacksonville Jaguars,DEF,28.20,6.00,31.10,20.00,6.00,91.30,18.26,11.91
-Houston Texans,Houston Texans,DEF,6.00,18.00,24.00,9.00,29.90,86.90,17.38,10.01
-Las Vegas Raiders,Las Vegas Raiders,DEF,26.00,25.90,21.50,6.00,6.00,85.40,17.08,10.28
-San Francisco 49ers,San Francisco 49ers,DEF,16.00,17.00,6.00,6.00,33.20,78.20,15.64,11.14
-Cleveland Browns,Cleveland Browns,DEF,3.00,17.50,14.80,21.00,21.00,77.30,15.46,7.44
-Chicago Bears,Chicago Bears,DEF,15.00,14.00,25.00,14.00,6.00,74.00,14.80,6.76
+name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+Minnesota Vikings,Minnesota Vikings,DEF,20.80,27.90,27.00,14.00,18.40,BYE,108.10,21.62,5.86
+Seattle Seahawks,Seattle Seahawks,DEF,26.00,19.00,6.00,26.00,20.00,9.00,106.00,17.67,8.45
+Chicago Bears,Chicago Bears,DEF,15.00,14.00,25.00,14.00,6.00,24.00,98.00,16.33,7.12
+Cincinnati Bengals,Cincinnati Bengals,DEF,32.70,22.00,10.10,12.00,18.70,BYE,95.50,19.10,9.01
+Cleveland Browns,Cleveland Browns,DEF,3.00,17.50,14.80,21.00,21.00,17.00,94.30,15.72,6.68
+Jacksonville Jaguars,Jacksonville Jaguars,DEF,28.20,6.00,31.10,20.00,6.00,3.00,94.30,15.72,12.34
+San Francisco 49ers,San Francisco 49ers,DEF,16.00,17.00,6.00,6.00,33.20,15.00,93.20,15.53,9.97
+Las Vegas Raiders,Las Vegas Raiders,DEF,26.00,25.90,21.50,6.00,6.00,6.00,91.40,15.23,10.24
+Houston Texans,Houston Texans,DEF,6.00,18.00,24.00,9.00,29.90,3.00,89.90,14.98,10.71

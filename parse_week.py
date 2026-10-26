@@ -63,11 +63,16 @@ PASS_TD = re.compile(r"^(\S[\w.' -]*?)\s+(\d+)\s+yd\.\s+pass (?:from|play by)\s+
 FG = re.compile(r"^(\S[\w.' -]*?)\s+(\d+)\s+yd\.\s+Field Goal")
 RET_TD = re.compile(r"^(\S[\w.' -]*?)\s+(\d+)\s+yd\.\s+(interception|fumble|punt|kickoff)\s+return")
 EZ_REC = re.compile(r"^(\S[\w.' -]*?)\s+fumble recovery in end zone")
+# A blocked kick returned for a score is a special teams play, so it pays
+# the returner and credits the defense with nothing -- the same rule as a
+# punt or kickoff return, despite being set up by the defense.
+BLOCK_RET = re.compile(r"^(\S[\w.' -]*?)\s+(\d+)\s+yd\.\s+return of blocked\s+"
+                       r"(punt|field goal|FG|extra point)", re.I)
 XP_KICK = re.compile(r"\((\S[\w.' -]*?)\s+kick\)")
 TWO_PT = re.compile(r"\((\S[\w.' -]*?)-(\S[\w.' -]*?)\s+(pass|run)\)")
 SAFETY = re.compile(r"[Ss]afety")
 
-KNOWN_FORMS = (RUN_TD, PASS_TD, FG, RET_TD, EZ_REC, SAFETY)
+KNOWN_FORMS = (RUN_TD, PASS_TD, FG, RET_TD, EZ_REC, BLOCK_RET, SAFETY)
 
 
 # --------------------------------------------------------------------------
@@ -449,6 +454,8 @@ def defense_row(row, g, side, team, problems):
                 # which is exactly the case being counted here.
                 fum_td_yds += yds
             continue
+        # A blocked kick returned for a score is deliberately absent from
+        # this loop: special teams touchdowns pay the returner only.
         m = EZ_REC.match(p["desc"])
         if m:
             # No yardage, so no "N yd. fumble return" wording. Defensive
@@ -510,6 +517,11 @@ def offense_row(row, g, side, pos, first, surname):
                 td50 += 1
         m = RET_TD.match(d)
         if m and m.group(3) in ("punt", "kickoff") and abbrev_match(m.group(1), first, surname):
+            st_td += 1
+            if int(m.group(2)) >= 50:
+                td50 += 1
+        m = BLOCK_RET.match(d)
+        if m and abbrev_match(m.group(1), first, surname):
             st_td += 1
             if int(m.group(2)) >= 50:
                 td50 += 1
