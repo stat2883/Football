@@ -1,13 +1,13 @@
-name,team,position,Week01,Week02,Week03,Week04,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-"Kittle, George",San Francisco 49ers,TE,3.20,18.00,26.20,23.00,70.40,17.60,10.18
-"McBride, Trey",Arizona Cardinals,TE,24.50,18.10,16.50,10.10,69.20,17.30,5.91
-"Kelce, Travis",Kansas City Chiefs,TE,10.10,30.10,13.90,3.50,57.60,14.40,11.31
-"LaPorta, Sam",Detroit Lions,TE,9.80,17.20,7.40,22.40,56.80,14.20,6.88
-"Bowers, Brock",Las Vegas Raiders,TE,INACTIVE,INACTIVE,32.60,20.60,53.20,26.60,8.49
-"Kincaid, Dalton",Buffalo Bills,TE,23.00,22.50,5.80,1.70,53.00,13.25,11.10
-"Likely, Isaiah",New York Giants,TE,27.80,8.30,3.30,13.60,53.00,13.25,10.57
-"Hockenson, T.J.",Minnesota Vikings,TE,13.60,5.90,3.10,29.90,52.50,13.12,12.03
-"Fannin Jr, Harold",Cleveland Browns,TE,4.10,10.40,24.10,11.70,50.30,12.57,8.37
-"Kraft, Tucker",Green Bay Packers,TE,9.50,3.50,6.60,16.50,36.10,9.03,5.55
-"Loveland, Colston",Chicago Bears,TE,0.00,1.30,7.10,11.70,20.10,5.02,5.42
-"Pitts Sr, Kyle",Atlanta Falcons,TE,0.00,2.50,1.50,7.70,11.70,2.92,3.35
+name,team,position,Week01,Week02,Week03,Week04,Week05,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+"McBride, Trey",Arizona Cardinals,TE,24.50,18.10,16.50,10.10,21.60,90.80,18.16,5.47
+"Likely, Isaiah",New York Giants,TE,27.80,8.30,3.30,13.60,32.40,85.40,17.08,12.54
+"Bowers, Brock",Las Vegas Raiders,TE,INACTIVE,INACTIVE,32.60,20.60,30.00,83.20,27.73,6.31
+"Kittle, George",San Francisco 49ers,TE,3.20,18.00,26.20,23.00,7.40,77.80,15.56,9.92
+"LaPorta, Sam",Detroit Lions,TE,9.80,17.20,7.40,22.40,19.80,76.60,15.32,6.46
+"Kelce, Travis",Kansas City Chiefs,TE,10.10,30.10,13.90,3.50,BYE,57.60,14.40,11.31
+"Kincaid, Dalton",Buffalo Bills,TE,23.00,22.50,5.80,1.70,3.70,56.70,11.34,10.52
+"Hockenson, T.J.",Minnesota Vikings,TE,13.60,5.90,3.10,29.90,1.70,54.20,10.84,11.61
+"Fannin Jr, Harold",Cleveland Browns,TE,4.10,10.40,24.10,11.70,1.40,51.70,10.34,8.80
+"Kraft, Tucker",Green Bay Packers,TE,9.50,3.50,6.60,16.50,11.60,47.70,9.54,4.94
+"Pitts Sr, Kyle",Atlanta Falcons,TE,0.00,2.50,1.50,7.70,15.20,26.90,5.38,6.21
+"Loveland, Colston",Chicago Bears,TE,0.00,1.30,7.10,11.70,3.90,24.00,4.80,4.72

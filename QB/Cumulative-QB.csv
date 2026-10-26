@@ -1,26 +1,26 @@
-name,team,position,Week01,Week02,Week03,Week04,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-"Purdy, Brock",San Francisco 49ers,QB,29.15,35.35,48.25,31.80,144.55,36.14,8.47
-"Allen, Josh",Buffalo Bills,QB,48.00,49.30,21.50,23.05,141.85,35.46,15.25
-"Young, Bryce",Carolina Panthers,QB,52.05,32.95,18.55,33.75,137.30,34.33,13.73
-"Shough, Tyler",New Orleans Saints,QB,42.30,26.90,38.35,20.80,128.35,32.09,9.96
-"Goff, Jared",Detroit Lions,QB,22.50,46.05,26.05,33.60,128.20,32.05,10.42
-"Mahomes, Patrick",Kansas City Chiefs,QB,27.50,43.80,22.40,23.25,116.95,29.24,9.96
-"Cousins, Kirk",Las Vegas Raiders,QB,21.40,28.75,30.70,35.25,116.10,29.02,5.77
-"Jackson, Lamar",Baltimore Ravens,QB,43.20,19.15,26.30,25.10,113.75,28.44,10.33
-"Prescott, Dak",Dallas Cowboys,QB,20.15,40.55,23.70,28.45,112.85,28.21,8.90
-"Burrow, Joe",Cincinnati Bengals,QB,18.70,22.25,33.40,37.00,111.35,27.84,8.75
-"Love, Jordan",Green Bay Packers,QB,40.35,19.25,30.60,19.05,109.25,27.31,10.23
-"Stroud, C.J.",Houston Texans,QB,27.20,25.55,15.35,35.55,103.65,25.91,8.29
-"Stafford, Matthew",Los Angeles Rams,QB,5.65,43.25,33.80,17.85,100.55,25.14,16.69
-"Watson, Deshaun",Cleveland Browns,QB,18.05,32.10,25.70,19.60,95.45,23.86,6.41
-"Smith, Geno",New York Jets,QB,11.45,20.05,42.25,17.95,91.70,22.93,13.39
-"Lawrence, Trevor",Jacksonville Jaguars,QB,36.55,8.05,27.60,17.35,89.55,22.39,12.37
-"Rodgers, Aaron",Pittsburgh Steelers,QB,16.75,7.85,31.60,28.95,85.15,21.29,11.05
-"Maye, Drake",New England Patriots,QB,13.60,10.10,7.75,36.85,68.30,17.07,13.40
-"Herbert, Justin",Los Angeles Chargers,QB,17.35,11.80,17.00,15.45,61.60,15.40,2.54
-"Willis, Malik",Miami Dolphins,QB,18.90,22.45,14.10,5.35,60.80,15.20,7.40
-"Williams, Caleb",Chicago Bears,QB,43.95,9.10,INACTIVE,INACTIVE,53.05,26.53,24.64
-"Mayfield, Baker",Tampa Bay Buccaneers,QB,19.80,16.00,15.45,INACTIVE,51.25,17.08,2.37
-"Daniels, Jayden",Washington Commanders,QB,23.30,17.70,INACTIVE,INACTIVE,41.00,20.50,3.96
-"Penix Jr, Michael",Atlanta Falcons,QB,INACTIVE,INACTIVE,18.60,16.95,35.55,17.77,1.17
-"Murray, Kyler",Minnesota Vikings,QB,-0.20,INACTIVE,14.10,13.95,27.85,9.28,8.21
+name,team,position,Week01,Week02,Week03,Week04,Week05,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+"Allen, Josh",Buffalo Bills,QB,48.00,49.30,21.50,23.05,39.60,181.45,36.29,13.34
+"Purdy, Brock",San Francisco 49ers,QB,29.15,35.35,48.25,31.80,22.05,166.60,33.32,9.67
+"Goff, Jared",Detroit Lions,QB,22.50,46.05,26.05,33.60,37.65,165.85,33.17,9.36
+"Love, Jordan",Green Bay Packers,QB,40.35,19.25,30.60,19.05,43.95,153.20,30.64,11.57
+"Burrow, Joe",Cincinnati Bengals,QB,18.70,22.25,33.40,37.00,34.50,145.85,29.17,8.14
+"Stafford, Matthew",Los Angeles Rams,QB,5.65,43.25,33.80,17.85,42.15,142.70,28.54,16.34
+"Young, Bryce",Carolina Panthers,QB,52.05,32.95,18.55,33.75,BYE,137.30,34.33,13.73
+"Prescott, Dak",Dallas Cowboys,QB,20.15,40.55,23.70,28.45,22.80,135.65,27.13,8.08
+"Cousins, Kirk",Las Vegas Raiders,QB,21.40,28.75,30.70,35.25,18.15,134.25,26.85,6.97
+"Lawrence, Trevor",Jacksonville Jaguars,QB,36.55,8.05,27.60,17.35,40.05,129.60,25.92,13.31
+"Stroud, C.J.",Houston Texans,QB,27.20,25.55,15.35,35.55,25.55,129.20,25.84,7.18
+"Shough, Tyler",New Orleans Saints,QB,42.30,26.90,38.35,20.80,0.80,129.15,25.83,16.44
+"Maye, Drake",New England Patriots,QB,13.60,10.10,7.75,36.85,56.20,124.50,24.90,21.00
+"Rodgers, Aaron",Pittsburgh Steelers,QB,16.75,7.85,31.60,28.95,36.35,121.50,24.30,11.70
+"Mahomes, Patrick",Kansas City Chiefs,QB,27.50,43.80,22.40,23.25,BYE,116.95,29.24,9.96
+"Jackson, Lamar",Baltimore Ravens,QB,43.20,19.15,26.30,25.10,INACTIVE,113.75,28.44,10.33
+"Watson, Deshaun",Cleveland Browns,QB,18.05,32.10,25.70,19.60,17.75,113.20,22.64,6.19
+"Smith, Geno",New York Jets,QB,11.45,20.05,42.25,17.95,15.80,107.50,21.50,12.03
+"Willis, Malik",Miami Dolphins,QB,18.90,22.45,14.10,5.35,24.25,85.05,17.01,7.58
+"Daniels, Jayden",Washington Commanders,QB,23.30,17.70,INACTIVE,INACTIVE,39.25,80.25,26.75,11.18
+"Herbert, Justin",Los Angeles Chargers,QB,17.35,11.80,17.00,15.45,15.45,77.05,15.41,2.20
+"Penix Jr, Michael",Atlanta Falcons,QB,INACTIVE,INACTIVE,18.60,16.95,18.80,54.35,18.12,1.02
+"Williams, Caleb",Chicago Bears,QB,43.95,9.10,INACTIVE,INACTIVE,INACTIVE,53.05,26.53,24.64
+"Mayfield, Baker",Tampa Bay Buccaneers,QB,19.80,16.00,15.45,INACTIVE,INACTIVE,51.25,17.08,2.37
+"Murray, Kyler",Minnesota Vikings,QB,-0.20,INACTIVE,14.10,13.95,22.55,50.40,12.60,9.43

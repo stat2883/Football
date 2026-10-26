@@ -1,0 +1,26 @@
+name,team,status,pass_yds,pass_td,pass_2pt,int_thrown,rush_yds,rush_td,rush_2pt,td_50plus,points
+"Allen, Josh",Buffalo Bills,active,210,1,1,1,121,1,,,39.60
+"Burrow, Joe",Cincinnati Bengals,active,190,4,,0,10,0,,,34.50
+"Cousins, Kirk",Las Vegas Raiders,active,243,1,,0,,,,,18.15
+"Daniels, Jayden",Washington Commanders,active,199,0,1,0,103,2,,,39.25
+"Goff, Jared",Detroit Lions,active,271,3,,0,1,1,,,37.65
+"Herbert, Justin",Los Angeles Chargers,active,121,1,,1,54,0,,,15.45
+"Lawrence, Trevor",Jacksonville Jaguars,active,331,2,,1,25,0,,1,40.05
+"Love, Jordan",Green Bay Packers,active,367,2,1,0,6,0,,1,43.95
+"Maye, Drake",New England Patriots,active,374,4,,0,25,1,,,56.20
+"Murray, Kyler",Minnesota Vikings,active,229,1,,0,51,0,,,22.55
+"Penix Jr, Michael",Atlanta Falcons,active,240,1,,0,8,0,,,18.80
+"Prescott, Dak",Dallas Cowboys,active,316,1,,2,,,,,22.80
+"Purdy, Brock",San Francisco 49ers,active,189,2,1,1,6,0,,,22.05
+"Rodgers, Aaron",Pittsburgh Steelers,active,235,3,,0,6,0,,1,36.35
+"Shough, Tyler",New Orleans Saints,active,96,0,,2,,,,,0.80
+"Smith, Geno",New York Jets,active,182,1,,0,7,0,,,15.80
+"Stafford, Matthew",Los Angeles Rams,active,383,3,,0,,,,,42.15
+"Stroud, C.J.",Houston Texans,active,261,1,,0,5,1,,,25.55
+"Watson, Deshaun",Cleveland Browns,active,155,1,,0,40,0,,,17.75
+"Willis, Malik",Miami Dolphins,active,137,1,1,2,74,1,,,24.25
+"Jackson, Lamar",Baltimore Ravens,INACTIVE,,,,,,,,,0.00
+"Mahomes, Patrick",Kansas City Chiefs,BYE,,,,,,,,,0.00
+"Mayfield, Baker",Tampa Bay Buccaneers,INACTIVE,,,,,,,,,0.00
+"Williams, Caleb",Chicago Bears,INACTIVE,,,,,,,,,0.00
+"Young, Bryce",Carolina Panthers,BYE,,,,,,,,,0.00
