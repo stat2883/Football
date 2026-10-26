@@ -14,7 +14,8 @@ import sys
 from parse_week import (EZ_REC, FG, PASS_TD, RET_TD, RUN_TD, TWO_PT, XP_KICK,
                         KNOWN_FORMS, abbrev_match, bare_surname, defense_row,
                         offense_row, one_col_table, override_for,
-                        split_name_stats, two_col_section, COLUMNS)
+                        split_name_stats, two_col_section, build,
+                        load_schedule, COLUMNS)
 
 FAILS = []
 CHECKS = 0
@@ -265,12 +266,98 @@ def test_status_overrides():
           override_for(ov, "Someone Else", 3))
 
 
+def test_bye_versus_not_yet_pulled():
+    """A team with no Game Book is on a bye or has not been pulled yet,
+    and the schedule is the only thing that tells them apart. Getting it
+    wrong either drops a real bye out of the file or silently excludes a
+    game that was simply pulled early."""
+    import os
+    import tempfile
+
+    sched = ("week,visitor,home\n"
+             "5,Chicago Bears,Green Bay Packers\n"
+             "5,Detroit Lions,Arizona Cardinals\n")
+    fd, path = tempfile.mkstemp(suffix=".csv")
+    with os.fdopen(fd, "w", encoding="utf-8") as fh:
+        fh.write(sched)
+    try:
+        playing = load_schedule(path, 5)
+        check("teams playing this week", 4, len(playing))
+        check("scheduled team found", True, "Green Bay Packers" in playing)
+        check("team absent from the week is on a bye", False,
+              "Carolina Panthers" in playing)
+        check("other weeks ignored", None, load_schedule(path, 6))
+        check("missing file yields no schedule", None,
+              load_schedule(path + ".nope", 5))
+    finally:
+        os.unlink(path)
+
+    # Now the decision itself. Carolina is not in the schedule for this
+    # week, so a Panther gets a BYE row; Detroit is scheduled but its
+    # Game Book is absent, so a Lion gets no row at all.
+    players = [
+        {"name": "Chuba Hubbard", "last_name": "Hubbard", "first_name": "Chuba",
+         "position": "RB", "team": "Carolina Panthers"},
+        {"name": "Jahmyr Gibbs", "last_name": "Gibbs", "first_name": "Jahmyr",
+         "position": "RB", "team": "Detroit Lions"},
+    ]
+    scheduled = {"Chicago Bears", "Green Bay Packers",
+                 "Detroit Lions", "Arizona Cardinals"}
+    rows, problems = build(5, [], players, [], scheduled)
+    check("one row written, not two", 1, len(rows))
+    check("the bye is recorded", ("Chuba Hubbard", "BYE"),
+          (rows[0]["name"], rows[0]["status"]))
+    check("the unpulled game leaves no row", [],
+          [r for r in rows if r["team"] == "Detroit Lions"])
+    check("no complaint for either", [], problems)
+
+    # With no schedule at all, neither is assumed and both are reported.
+    rows, problems = build(5, [], players, [], None)
+    check("without a schedule nothing is guessed", 0, len(rows))
+    check("and both are reported", 2, len(problems))
+
+
+def test_absent_player_gets_blank_status_not_active():
+    """The trap that scored Josh Jacobs a real 0.00 in week 1."""
+    g = {
+        "file": "t.txt",
+        "vis_rushing": [], "vis_passing": [], "vis_receiving": [],
+        "vis_punt_ret": [], "vis_ko_ret": [],
+        "vis_lineup": "RB 30 C.Brooks", "vis_subs": "RB 32 M.Lloyd",
+        "vis_inactive": "LB 59 T.Hopper", "vis_dnp": "QB 6 T.Taylor",
+        "visitor": "Green Bay Packers", "home": "Minnesota Vikings",
+        "scoring_plays": [],
+    }
+    players = [{"name": "Josh Jacobs", "last_name": "Jacobs",
+                "first_name": "Josh", "position": "RB",
+                "team": "Green Bay Packers"}]
+    rows, problems = build(2, [g], players, [], {"Green Bay Packers"})
+    check("absent player is not active", "", rows[0]["status"])
+    check("and is reported", 1, len(problems))
+
+    # With the reason recorded, the status is filled and the complaint
+    # goes away -- and it survives a re-run, which a hand edit does not.
+    ov = [{"name": "Josh Jacobs", "first": 1, "last": None,
+           "status": "OUT", "note": "exempt list"}]
+    rows, problems = build(2, [g], players, ov, {"Green Bay Packers"})
+    check("override supplies the status", "OUT", rows[0]["status"])
+    check("and silences the complaint", [], problems)
+
+    # A player the Game Book itself lists as inactive is explained by the
+    # document, which wins over any override.
+    g["vis_inactive"] = "LB 59 T.Hopper, RB 8 J.Jacobs"
+    rows, _ = build(2, [g], players, ov, {"Green Bay Packers"})
+    check("the Game Book beats the override", "INACTIVE", rows[0]["status"])
+
+
 def main():
     for fn in (test_abbreviations, test_team_sacks_total, test_two_column_split,
                test_negative_and_zero_lines, test_scoring_play_forms,
                test_long_td_comes_from_scoring_summary,
                test_end_zone_fumble_is_defensive_only_when_opp_rec,
-               test_defense_aggregates, test_status_overrides):
+               test_defense_aggregates, test_status_overrides,
+               test_bye_versus_not_yet_pulled,
+               test_absent_player_gets_blank_status_not_active):
         fn()
     for f in FAILS:
         print("FAIL ", f)

@@ -38,9 +38,11 @@ run_week.py              raw week -> six per-position weekly files
 build_cumulative.py      weekly files -> six cumulative files
 test_scoring.py          26 hand-checkable scoring cases
 test_cumulative.py       14 checks on the summary columns
-test_parse_week.py       58 checks on the Game Book reading, one per trap
+test_parse_week.py       74 checks on the Game Book reading, one per trap
 fetch_week.py            downloads a week's Game Book PDFs and extracts text
+fetch_schedule.py        downloads a season's schedule (run once per season)
 parse_week.py            Game Books -> the raw weekly file
+schedule-2026.csv        every regular-season game; tells a bye from an unpulled game
 weeks/_TEMPLATE.csv      blank header row for a raw weekly pull
 weeks/status-overrides.csv  why a player absent from the Game Book did not play
 gamebooks/weekNN/        downloaded Game Books (not committed)
@@ -257,6 +259,29 @@ a zero.
 
 **Never put text in a numeric column** — the scoring engine will reject the run
 and name the offending column, which is the intended behavior.
+
+### Byes and the schedule
+
+`schedule-2026.csv` holds every regular-season game, downloaded once by
+`fetch_schedule.py` and committed. It exists because a team with no Game Book
+is in one of two completely different situations, and the gamebooks directory
+cannot tell them apart:
+
+- **not in the schedule that week** — a bye. The player gets a row with status
+  `BYE`, which is excluded from games played.
+- **in the schedule but not downloaded** — not pulled yet. The player gets **no
+  row at all**, which is what lets the week be topped up later.
+
+Confusing the two is quiet and damaging in both directions: a real bye written
+as "not pulled" vanishes from the file, and an early pull written as a bye
+permanently drops a game that was actually played. `parse_week.py` reports the
+scheduled teams whose Game Book is still missing after every run, so a partial
+week names itself.
+
+With no schedule file the script assumes neither, reports it, and leaves the
+rows out. Regenerate with `python3 fetch_schedule.py --season 2027` at the
+start of a new season; it reads team names from the Game Books on disk, so run
+`fetch_week.py 1` first.
 
 ### Partial weeks
 

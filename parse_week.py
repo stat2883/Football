@@ -556,15 +556,17 @@ def build(week, games, players, overrides, scheduled):
         row.update(name=name, position=pos, team=team)
 
         if team not in team_game:
-            nick = team.split()[-1].lower()
-            if scheduled is not None and nick not in scheduled:
+            if scheduled is None:
+                problems.append(
+                    f"{name}: no Game Book for {team}, and no schedule to say "
+                    "whether that is a bye or a game not yet pulled. Run "
+                    "fetch_schedule.py, or pass --no-schedule to leave the "
+                    "row out either way")
+            elif team not in scheduled:
                 row["status"] = "BYE"
                 rows.append(row)
-            elif scheduled is None:
-                problems.append(f"{name}: no Game Book for {team}, and the "
-                                "schedule was unavailable, so bye and "
-                                "not-yet-pulled cannot be told apart")
-            # otherwise: scheduled but not downloaded -> no row at all
+            # otherwise: scheduled but not downloaded -> no row at all,
+            # which is how a partial week stays toppable-up
             continue
 
         g, side = team_game[team]
@@ -609,23 +611,25 @@ def build(week, games, players, overrides, scheduled):
     return rows, problems
 
 
-def schedule_nicknames(season, week):
-    """Team nicknames with a game this week, used to tell a bye from a
-    game that simply has not been pulled yet. Returns None if the
-    schedule cannot be reached, in which case neither is assumed."""
-    try:
-        from fetch_week import game_slugs
-        slugs = game_slugs(season, week)
-    except Exception as exc:
-        print(f"  schedule unavailable ({exc}); byes cannot be detected",
-              file=sys.stderr)
+def load_schedule(path, week):
+    """Teams with a game in this week, from the committed schedule.
+
+    A team with no Game Book is on a bye or simply has not been pulled
+    yet, and those must not be confused: a bye is excluded from games
+    played, while an unpulled game must leave the player without a row
+    so the week can be topped up later. The schedule is what tells them
+    apart. Returns None when the file is absent, in which case neither
+    is assumed.
+    """
+    if not os.path.exists(path):
         return None
-    nicks = set()
-    for s in slugs:
-        base = s.rsplit("/", 1)[-1].split(f"-{season}-reg-{week}")[0]
-        if "-at-" in base:
-            nicks.update(base.split("-at-"))
-    return nicks or None
+    playing = set()
+    with open(path, newline="", encoding="utf-8") as fh:
+        for r in csv.DictReader(fh):
+            if int(r["week"]) == week:
+                playing.add(r["visitor"].strip())
+                playing.add(r["home"].strip())
+    return playing or None
 
 
 def main():
@@ -638,8 +642,9 @@ def main():
     ap.add_argument("--players", default=os.path.join(HERE, "players.csv"))
     ap.add_argument("--overrides",
                     default=os.path.join(HERE, "weeks", "status-overrides.csv"))
+    ap.add_argument("--schedule", help="default schedule-SEASON.csv")
     ap.add_argument("--no-schedule", action="store_true",
-                    help="skip the schedule lookup; byes are not detected")
+                    help="ignore the schedule; byes are not detected")
     args = ap.parse_args()
 
     wk = f"{args.week:02d}"
@@ -662,7 +667,12 @@ def main():
     with open(args.players, newline="", encoding="utf-8") as fh:
         players = list(csv.DictReader(fh))
     overrides = load_overrides(args.overrides)
-    scheduled = None if args.no_schedule else schedule_nicknames(args.season, args.week)
+    sched_path = args.schedule or os.path.join(HERE, f"schedule-{args.season}.csv")
+    scheduled = None if args.no_schedule else load_schedule(sched_path, args.week)
+    if scheduled is None and not args.no_schedule:
+        print(f"  no schedule for week {args.week} in "
+              f"{os.path.relpath(sched_path, HERE)}; byes cannot be detected",
+              file=sys.stderr)
 
     rows, build_problems = build(args.week, games, players, overrides, scheduled)
     problems += build_problems
@@ -679,10 +689,18 @@ def main():
     print(f"{len(games)} Game Books -> {len(rows)} rows in "
           f"{os.path.relpath(out, HERE)}")
     print("  " + ", ".join(f"{v} {k}" for k, v in sorted(counts.items())))
+    if scheduled is not None:
+        have = {t for g in games for t in (g["visitor"], g["home"])}
+        not_pulled = sorted(scheduled - have)
+        if not_pulled:
+            print(f"\n  {len(not_pulled)} team(s) scheduled this week with no "
+                  "Game Book yet:")
+            print("    " + ", ".join(not_pulled))
+            print("  Their players have no row, which is correct for a partial "
+                  "week. Re-run fetch_week.py and this script to top it up.")
     missing = len(players) - len(rows)
-    if missing:
-        print(f"  {missing} player(s) have no row yet; their games are not "
-              "in this download. Re-run fetch_week.py and this script.")
+    if missing and scheduled is None:
+        print(f"  {missing} player(s) have no row.")
 
     if problems:
         print(f"\n{len(problems)} thing(s) need a human:")
