@@ -1,0 +1,33 @@
+name,team,status,rush_yds,rush_td,rush_2pt,rec,rec_yds,rec_td,rec_2pt,td_50plus,st_ret_td,points
+"Addison, Jordan",Minnesota Vikings,active,3,0,,2,20,0,,,,4.30
+"Brown, A.J.",New England Patriots,active,,,,3,48,0,,,,7.80
+"Chase, Ja'Marr",Cincinnati Bengals,active,,,,5,62,1,,,,17.20
+"Coker, Jalen",Carolina Panthers,active,,,,1,9,0,,,,1.90
+"Collins, Nico",Houston Texans,active,,,,2,6,0,,,,2.60
+"Downs, Josh",Indianapolis Colts,active,,,,2,18,0,,,,3.80
+"Flowers, Zay",Baltimore Ravens,active,,,,8,137,1,,,,32.70
+"Golden, Matthew",Green Bay Packers,active,,,,6,39,0,,,,9.90
+"Higgins, Tee",Cincinnati Bengals,active,,,,6,148,1,,,,31.80
+"Jefferson, Justin",Minnesota Vikings,active,,,,4,44,0,,,,8.40
+"Lamb, CeeDee",Dallas Cowboys,active,,,,5,74,2,,,,24.40
+"London, Drake",Atlanta Falcons,active,,,,7,66,1,,,,19.60
+"McMillan, Tetairoa",Carolina Panthers,active,,,,4,40,0,,,,8.00
+"Nabers, Malik",New York Giants,active,,,,7,111,0,,,,23.10
+"Nacua, Puka",Los Angeles Rams,active,10,0,,8,68,1,,,,21.80
+"Odunze, Rome",Chicago Bears,active,,,,4,69,0,,,,10.90
+"Olave, Chris",New Orleans Saints,active,,,,6,56,0,,,,11.60
+"Pickens, George",Dallas Cowboys,active,,,,4,57,1,,,,15.70
+"Smith-Njigba, Jaxon",Seattle Seahawks,active,13,0,,9,150,1,,,,36.30
+"St. Brown, Amon-Ra",Detroit Lions,active,-1,0,,9,153,0,,,,29.20
+"Tucker, Tre",Las Vegas Raiders,active,,,,5,103,1,,,,26.30
+"Waddle, Jaylen",Denver Broncos,active,,,,4,48,0,,,,8.80
+"Watson, Christian",Green Bay Packers,active,,,,5,57,0,,,,10.70
+"Williams, Jameson",Detroit Lions,active,,,,5,91,2,,,,26.10
+"Wilson, Garrett",New York Jets,active,,,,2,26,0,,,,4.60
+"Adams, Davante",Los Angeles Rams,IR,,,,,,,,,,0.00
+"Doubs, Romeo",New England Patriots,IR,,,,,,,,,,0.00
+"Egbuka, Emeka",Tampa Bay Buccaneers,INACTIVE,,,,,,,,,,0.00
+"Evans, Mike",San Francisco 49ers,INACTIVE,,,,,,,,,,0.00
+"Moore, D.J.",Buffalo Bills,BYE,,,,,,,,,,0.00
+"Thomas Jr, Brian",Jacksonville Jaguars,BYE,,,,,,,,,,0.00
+"Washington, Parker",Jacksonville Jaguars,BYE,,,,,,,,,,0.00

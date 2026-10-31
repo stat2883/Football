@@ -1,13 +1,13 @@
-name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-"Likely, Isaiah",New York Giants,TE,27.80,8.30,3.30,13.60,32.40,23.90,109.30,18.22,11.55
-"McBride, Trey",Arizona Cardinals,TE,24.50,18.10,16.50,10.10,21.60,12.30,103.10,17.18,5.45
-"Kittle, George",San Francisco 49ers,TE,3.20,18.00,26.20,23.00,7.40,17.90,95.70,15.95,8.93
-"Bowers, Brock",Las Vegas Raiders,TE,INACTIVE,INACTIVE,32.60,20.60,30.00,11.00,94.20,23.55,9.83
-"LaPorta, Sam",Detroit Lions,TE,9.80,17.20,7.40,22.40,19.80,BYE,76.60,15.32,6.46
-"Kincaid, Dalton",Buffalo Bills,TE,23.00,22.50,5.80,1.70,3.70,10.80,67.50,11.25,9.41
-"Kelce, Travis",Kansas City Chiefs,TE,10.10,30.10,13.90,3.50,BYE,9.30,66.90,13.38,10.06
-"Kraft, Tucker",Green Bay Packers,TE,9.50,3.50,6.60,16.50,11.60,8.70,56.40,9.40,4.44
-"Hockenson, T.J.",Minnesota Vikings,TE,13.60,5.90,3.10,29.90,1.70,BYE,54.20,10.84,11.61
-"Fannin Jr, Harold",Cleveland Browns,TE,4.10,10.40,24.10,11.70,1.40,1.90,53.60,8.93,8.60
-"Pitts Sr, Kyle",Atlanta Falcons,TE,0.00,2.50,1.50,7.70,15.20,23.00,49.90,8.32,9.09
-"Loveland, Colston",Chicago Bears,TE,0.00,1.30,7.10,11.70,3.90,18.50,42.50,7.08,7.01
+name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Week07,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+"McBride, Trey",Arizona Cardinals,TE,24.50,18.10,16.50,10.10,21.60,12.30,32.10,135.20,19.31,7.52
+"Kittle, George",San Francisco 49ers,TE,3.20,18.00,26.20,23.00,7.40,17.90,16.80,112.50,16.07,8.16
+"Likely, Isaiah",New York Giants,TE,27.80,8.30,3.30,13.60,32.40,23.90,3.20,112.50,16.07,11.98
+"Bowers, Brock",Las Vegas Raiders,TE,INACTIVE,INACTIVE,32.60,20.60,30.00,11.00,13.30,107.50,21.50,9.67
+"LaPorta, Sam",Detroit Lions,TE,9.80,17.20,7.40,22.40,19.80,BYE,2.80,79.40,13.23,7.71
+"Kelce, Travis",Kansas City Chiefs,TE,10.10,30.10,13.90,3.50,BYE,9.30,8.40,75.30,12.55,9.23
+"Kraft, Tucker",Green Bay Packers,TE,9.50,3.50,6.60,16.50,11.60,8.70,14.80,71.20,10.17,4.53
+"Fannin Jr, Harold",Cleveland Browns,TE,4.10,10.40,24.10,11.70,1.40,1.90,15.10,68.70,9.81,8.19
+"Hockenson, T.J.",Minnesota Vikings,TE,13.60,5.90,3.10,29.90,1.70,BYE,13.50,67.70,11.28,10.44
+"Kincaid, Dalton",Buffalo Bills,TE,23.00,22.50,5.80,1.70,3.70,10.80,BYE,67.50,11.25,9.41
+"Pitts Sr, Kyle",Atlanta Falcons,TE,0.00,2.50,1.50,7.70,15.20,23.00,13.20,63.10,9.01,8.50
+"Loveland, Colston",Chicago Bears,TE,0.00,1.30,7.10,11.70,3.90,18.50,19.90,62.40,8.91,8.02
