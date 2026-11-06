@@ -50,6 +50,18 @@ def load_rules(path=None):
         return json.load(fh)
 
 
+def has(row, key):
+    """True when the column actually holds a value rather than a blank.
+
+    Needed because blank and 0 mean different things for a lookup-table
+    parameter: 0 points allowed is a shutout, a blank is no game at all.
+    """
+    val = row.get(key)
+    if val is None:
+        return False
+    return bool(str(val).strip())
+
+
 def num(row, key):
     """Blank, missing, or unparseable -> 0."""
     raw = (row.get(key) or "").strip()
@@ -110,8 +122,14 @@ def score_row(row, rules):
             g("def_fum_ret_td_yds") * per_yd["fumble_return_td_only"])
         add(f"TDs of {longtd['min_yards']}+ yards",
             g("def_td_50plus") * longtd["points"])
-        add(f"points allowed ({int(g('pts_allowed'))})",
-            tier_for(d["points_allowed"], g("pts_allowed")))
+        # Points allowed is the one scoring parameter that pays out for a zero,
+        # so a blank must not fall through to the shutout tier. A defense with
+        # no pts_allowed figure played no game — bye, IR, or not yet pulled —
+        # and scores nothing, exactly as a non-active individual player does
+        # whose stat columns are all blank.
+        if has(row, "pts_allowed"):
+            add(f"points allowed ({int(g('pts_allowed'))})",
+                tier_for(d["points_allowed"], g("pts_allowed")))
         total = round(sum(p for _, p in lines), 2)
         return total, lines
 

@@ -99,6 +99,21 @@ case("fumble return TD counts its yards", 12.00,
 case("fumble recovery without a TD ignores return yards", 3.00,
      name="t", position="DEF", def_fum_rec=1, pts_allowed=21)
 
+# --- a defense that played no game scores nothing -------------------------
+# A bye/IR/not-yet-pulled defense has every column blank, including
+# pts_allowed. Blank must not read as 0 and collect the shutout's 15; it
+# scores 0.00, exactly as a non-active individual player does.
+case("blank pts_allowed is not a shutout", 0.00,
+     name="t", position="DEF", pts_allowed="")
+case("defense on a bye scores nothing", 0.00,
+     name="t", position="DEF", status="BYE", pts_allowed="")
+# The column missing altogether behaves the same as blank.
+case("absent pts_allowed is not a shutout", 0.00,
+     name="t", position="DEF")
+# ...while a genuine shutout still pays, whether given as text or a number.
+case("shutout tier still pays when pts_allowed is '0'", 15.00,
+     name="t", position="DEF", pts_allowed="0")
+
 # --- special teams return TD goes to the returner, not the defense ---------
 case("returner gets 6 for a kick return TD", 6.00,
      name="t", position="WR", st_ret_td=1)
