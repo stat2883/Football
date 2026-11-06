@@ -1,10 +1,10 @@
-name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Week07,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-Minnesota Vikings,Minnesota Vikings,DEF,20.80,27.90,27.00,14.00,18.40,BYE,21.50,129.60,21.60,5.24
-Seattle Seahawks,Seattle Seahawks,DEF,26.00,19.00,6.00,26.00,20.00,9.00,16.00,122.00,17.43,7.74
-Cincinnati Bengals,Cincinnati Bengals,DEF,32.70,22.00,10.10,12.00,18.70,BYE,21.40,116.90,19.48,8.12
-Chicago Bears,Chicago Bears,DEF,15.00,14.00,25.00,14.00,6.00,24.00,9.00,107.00,15.29,7.06
-Cleveland Browns,Cleveland Browns,DEF,3.00,17.50,14.80,21.00,21.00,17.00,9.00,103.30,14.76,6.61
-Las Vegas Raiders,Las Vegas Raiders,DEF,26.00,25.90,21.50,6.00,6.00,6.00,9.00,100.40,14.34,9.64
-Houston Texans,Houston Texans,DEF,6.00,18.00,24.00,9.00,29.90,3.00,9.00,98.90,14.13,10.03
-Jacksonville Jaguars,Jacksonville Jaguars,DEF,28.20,6.00,31.10,20.00,6.00,3.00,BYE,94.30,15.72,12.34
-San Francisco 49ers,San Francisco 49ers,DEF,16.00,17.00,6.00,6.00,33.20,15.00,0.00,93.20,13.31,10.83
+name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Week07,Week08,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+Minnesota Vikings,Minnesota Vikings,DEF,20.80,27.90,27.00,14.00,18.40,BYE,21.50,18.00,147.60,21.09,4.98
+Jacksonville Jaguars,Jacksonville Jaguars,DEF,28.20,6.00,31.10,20.00,6.00,3.00,BYE,53.10,147.40,21.06,18.07
+Cincinnati Bengals,Cincinnati Bengals,DEF,32.70,22.00,10.10,12.00,18.70,BYE,21.40,14.00,130.90,18.70,7.69
+Seattle Seahawks,Seattle Seahawks,DEF,26.00,19.00,6.00,26.00,20.00,9.00,16.00,6.00,128.00,16.00,8.23
+Chicago Bears,Chicago Bears,DEF,15.00,14.00,25.00,14.00,6.00,24.00,9.00,16.60,123.60,15.45,6.56
+Las Vegas Raiders,Las Vegas Raiders,DEF,26.00,25.90,21.50,6.00,6.00,6.00,9.00,9.00,109.40,13.68,9.13
+Cleveland Browns,Cleveland Browns,DEF,3.00,17.50,14.80,21.00,21.00,17.00,9.00,6.00,109.30,13.66,6.86
+Houston Texans,Houston Texans,DEF,6.00,18.00,24.00,9.00,29.90,3.00,9.00,BYE,98.90,14.13,10.03
+San Francisco 49ers,San Francisco 49ers,DEF,16.00,17.00,6.00,6.00,33.20,15.00,0.00,BYE,93.20,13.31,10.83
