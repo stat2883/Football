@@ -115,6 +115,41 @@ DEF entries carry the team name in `name`, `last_name`, and `team`.
 When adding a player, fill in `last_name` and `first_name` directly rather than
 relying on a split.
 
+### Mid-season trades
+
+`team` holds the player's **current** team, and it is what `parse_week.py` uses
+to decide which Game Book to look for him in. When a tracked player is traded,
+edit the column. Waddle at Denver, Mike Evans at San Francisco, A.J. Brown at
+New England, Kenneth Walker III at Kansas City and Travis Etienne Jr at New
+Orleans are all carried this way; Kirk Cousins (Las Vegas to Minnesota) and
+Josh Downs (Indianapolis to Kansas City) were added at the 11/10/2026 deadline.
+
+A trade announces itself. Until the column is updated the player is searched
+for in his old team's Game Book, comes back absent from it entirely, and is
+reported as needing a human — the same way an injury is. The fix is the team
+column, **not** a status: he played, so recording `IR` or `OUT` would throw
+away a real score. Check whether an unexplained absence is a trade before
+assuming it is an injury, and note that the absence check only catches him
+because he is missing; if a different player with the same surname and first
+initial is on the old roster, the stat line can land on the wrong man without
+anything being reported.
+
+**Known limitation: there is one team per player, not one per week.** Editing
+the column is correct going forward and leaves already-written weekly files
+untouched, but it has two consequences worth knowing:
+
+- The cumulative files show the new team across *every* week, including weeks
+  the player spent on his old team. Cosmetic.
+- **Re-parsing an earlier week after a trade will silently drop games the
+  player actually played**, because `parse_week.py` will search his new team's
+  Game Book for a week he was not on that team. This is the one that bites,
+  and the realistic way to hit it is a late stat correction sending you back to
+  re-run `parse_week.py` on an earlier week (§4, Partial weeks).
+
+If an earlier week ever does need re-parsing after a trade, point the column
+back at the old team for that run and then set it forward again, or check the
+affected player's row against the weekly file that was already written.
+
 ---
 
 ## 4. Weekly Statistics Pull
