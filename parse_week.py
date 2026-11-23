@@ -370,6 +370,24 @@ def override_for(overrides, name, week):
 # verification
 # --------------------------------------------------------------------------
 
+def fumbles_reconcile(rec, oob, lost):
+    """Can the opponent's LOST fumble count be accounted for?
+
+    A lost fumble is either recovered by this team or lost without anyone
+    recovering it: a fumble out of bounds through the opponent's end zone is a
+    touchback, which changes possession with no OPP-REC to show for it. So the
+    opponent's LOST is bounded below by what this team recovered and above by
+    that plus the opponent's own OUT-BDS. Week 11 Baltimore lost 3 at Carolina:
+    Carolina recovered 2 and J.Hill's went out of bounds. An equality against
+    recoveries alone reported that correct Game Book as needing a human.
+
+    The bound is deliberately loose rather than an equality, because OUT-BDS
+    also counts a fumble out of bounds that the fumbling team keeps, which is
+    not a lost fumble at all and cannot be told apart from the totals.
+    """
+    return rec <= lost <= rec + oob
+
+
 def verify(g, raw_text):
     """Cross-check the parse against the Game Book's own team totals.
 
@@ -418,9 +436,12 @@ def verify(g, raw_text):
                        f"interceptions table {int_rows}, opponent threw {thrown_by_opp}")
         if lost is not None:
             rec = int(g["fumbles"][team]["total"][6])
-            if rec != lost[other]:
-                bad.append(f"{f}: {team} recovered {rec} opponent fumbles but the "
-                           f"opponent is shown losing {lost[other]}")
+            other_team = g["home"] if side == "vis" else g["visitor"]
+            oob = int(g["fumbles"][other_team]["total"][9])
+            if not fumbles_reconcile(rec, oob, lost[other]):
+                bad.append(f"{f}: {team} recovered {rec} opponent fumbles with "
+                           f"{oob} out of bounds, which cannot account for the "
+                           f"opponent being shown losing {lost[other]}")
     return bad
 
 
@@ -575,7 +596,13 @@ def build(week, games, players, overrides, scheduled):
                     "fetch_schedule.py, or pass --no-schedule to leave the "
                     "row out either way")
             elif team not in scheduled:
-                row["status"] = "BYE"
+                # A released player is on no roster, so his former team's bye
+                # says nothing about him: FA wins over BYE. Every other
+                # override describes a player still on the roster, where the
+                # bye is the better label for the week.
+                ov = override_for(overrides, name, week)
+                row["status"] = ("FA" if ov and ov["status"].upper() == "FA"
+                                 else "BYE")
                 rows.append(row)
             # otherwise: scheduled but not downloaded -> no row at all,
             # which is how a partial week stays toppable-up

@@ -77,9 +77,10 @@ score.py                 scoring engine
 positions.py             per-position schemas and name handling
 run_week.py              raw week -> six per-position weekly files
 build_cumulative.py      weekly files -> six cumulative files
-test_scoring.py          26 hand-checkable scoring cases
+test_scoring.py          32 hand-checkable scoring cases
 test_cumulative.py       14 checks on the summary columns
-test_parse_week.py       74 checks on the Game Book reading, one per trap
+test_parse_week.py       91 checks on the Game Book reading, one per trap
+test_fetch_week.py       11 checks that a download is the game it was asked for
 fetch_week.py            downloads a week's Game Book PDFs and extracts text
 fetch_schedule.py        downloads a season's schedule (run once per season)
 parse_week.py            Game Books -> the raw weekly file
@@ -182,6 +183,19 @@ extracts each to fixed-layout text with `pdftotext`. Output lands in
 Games whose Game Book has not been published yet are reported as **PENDING**
 rather than failing. Re-running skips what is already downloaded and collects
 only the new ones, which is how a partial week (§4, Partial weeks) is topped up.
+
+**Every download is checked against the slug it was fetched for.** A game page
+carries a Game Book link for every game of the week, not only its own, and the
+page's first link is this game's book only once that book has been published.
+Until then the first link belongs to another game, so an unchecked download
+files another game's statistics under this game's name. It is silent, it looks
+like a successful pull, and it happens only on a week pulled before every game
+has finished -- so the partial pull below is the one workflow it corrupts. Week
+11, pulled on the Sunday evening, is the case: the pages for the two games
+still in progress both served Thursday's Colts-Texans book. `fetch_week.py`
+reads the extracted header, confirms it names both teams the slug names, and
+treats a mismatch as PENDING, discarding the file. Do not weaken that check to
+make a week look complete.
 
 **This requires `www.nfl.com` and `static.www.nfl.com` to be allowed under
 Settings > Capabilities on claude.ai.** If downloads fail with a 403 CONNECT
@@ -296,8 +310,11 @@ that produced them.
 
 The script cross-checks itself against each document's own team totals — sacks
 against `Times thrown`, interceptions against what the opponent threw, fumble
-recoveries against what the opponent lost, and the scoring plays against the
-final score — and reports any scoring play whose wording it does not recognise
+recoveries against what the opponent lost (bounded, not equal: a fumble out of
+bounds through the end zone changes possession with no `OPP-REC` to show for
+it, so the opponent's `LOST` is reconciled against recoveries plus their own
+`OUT-BDS`, which is what week 11 Baltimore needed), and the scoring plays
+against the final score — and reports any scoring play whose wording it does not recognise
 rather than dropping it silently. That last check is what surfaced the week-5
 end-zone fumble recovery. It exits non-zero when anything needs a human, so a
 clean run is a positive signal rather than merely the absence of a crash.
@@ -344,7 +361,11 @@ is in one of two completely different situations, and the gamebooks directory
 cannot tell them apart:
 
 - **not in the schedule that week** — a bye. The player gets a row with status
-  `BYE`, which is excluded from games played.
+  `BYE`, which is excluded from games played. The one exception is a player
+  carrying an `FA` override: he has been released and is on no roster, so his
+  former team's bye says nothing about him and the row reads `FA`. Every other
+  override describes a player still on the roster, where the bye is the better
+  label, so only `FA` wins here.
 - **in the schedule but not downloaded** — not pulled yet. The player gets **no
   row at all**, which is what lets the week be topped up later.
 
@@ -428,10 +449,11 @@ in the output, so a later scoring change is re-runnable without re-pulling.
 files exist. It is a full rebuild, not an append — a corrected week-4 stat
 therefore propagates to the totals automatically.
 
-Run all three test suites after any change to scoring or the pipeline:
+Run all four test suites after any change to scoring or the pipeline:
 
 ```
-python3 test_scoring.py && python3 test_cumulative.py && python3 test_parse_week.py
+python3 test_scoring.py && python3 test_cumulative.py && \
+  python3 test_parse_week.py && python3 test_fetch_week.py
 ```
 
 ---

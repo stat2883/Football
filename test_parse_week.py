@@ -15,6 +15,7 @@ from parse_week import (BLOCK_RET, EZ_REC, FG, PASS_TD, RET_TD, RUN_TD,
                         TWO_PT, XP_KICK,
                         KNOWN_FORMS, abbrev_match, bare_surname, defense_row,
                         offense_row, one_col_table, override_for,
+                        fumbles_reconcile,
                         split_name_stats, two_col_section, build,
                         load_schedule, COLUMNS)
 
@@ -370,6 +371,68 @@ def test_absent_player_gets_blank_status_not_active():
     check("the Game Book beats the override", "INACTIVE", rows[0]["status"])
 
 
+def test_fumbles_out_of_bounds_reconcile():
+    """Week 11, Baltimore at Carolina.
+
+    Baltimore's FUMBLES table read FUM 4, LOST 3, OUT-BDS 1, and the team
+    summary agreed at 4-3. Carolina's table showed OPP-REC 2. An equality
+    against recoveries alone called that a discrepancy needing a human, but the
+    document is right: of 3 lost fumbles Carolina recovered 2 and J.Hill's went
+    out of bounds through the end zone, changing possession with nothing to
+    recover.
+    """
+    check("Carolina recovering 2 of Baltimore's 3 lost reconciles via OUT-BDS",
+          True, fumbles_reconcile(rec=2, oob=1, lost=3))
+    check("the plain case with nothing out of bounds still reconciles",
+          True, fumbles_reconcile(rec=0, oob=0, lost=0))
+    check("recoveries matching lost exactly reconciles",
+          True, fumbles_reconcile(rec=3, oob=0, lost=3))
+    # The check must still catch a real miss, which is the point of having it.
+    check("a lost fumble neither recovered nor out of bounds is caught",
+          False, fumbles_reconcile(rec=1, oob=0, lost=3))
+    check("more recoveries than the opponent lost is caught",
+          False, fumbles_reconcile(rec=2, oob=0, lost=1))
+    # OUT-BDS also counts a fumble out of bounds that the fumbling team keeps,
+    # so the upper bound is loose on purpose rather than an equality.
+    check("an out-of-bounds fumble the fumbling team kept is not a failure",
+          True, fumbles_reconcile(rec=1, oob=2, lost=1))
+
+
+def test_free_agent_beats_a_former_team_bye():
+    """Week 11, Nick Folk.
+
+    Atlanta released him in week 10 and was on a bye in week 11. He is on no
+    roster, so his former team's bye says nothing about him, and the schedule
+    branch runs before overrides are consulted -- which labelled him BYE. Every
+    other override describes a player still on the roster, where the bye is the
+    better label, so only FA wins here.
+    """
+    players = [
+        {"name": "Nick Folk", "last_name": "Folk", "first_name": "Nick",
+         "position": "K", "team": "Atlanta Falcons"},
+        {"name": "Drake London", "last_name": "London", "first_name": "Drake",
+         "position": "WR", "team": "Atlanta Falcons"},
+    ]
+    overrides = [
+        {"name": "Nick Folk", "first": 10, "last": None, "status": "FA",
+         "note": ""},
+    ]
+    scheduled = {"Chicago Bears", "Green Bay Packers"}
+    rows, problems = build(11, [], players, overrides, scheduled)
+    by_name = {r["name"]: r["status"] for r in rows}
+    check("the released player is FA, not BYE", "FA", by_name["Nick Folk"])
+    check("a teammate still on the roster is BYE", "BYE",
+          by_name["Drake London"])
+    check("no complaint for either", [], problems)
+
+    # An IR override on a bye team stays BYE: he is still on the roster.
+    ir = [{"name": "Nick Folk", "first": 10, "last": None, "status": "IR",
+           "note": ""}]
+    rows, _ = build(11, [], players, ir, scheduled)
+    check("an IR override does not override the bye", "BYE",
+          {r["name"]: r["status"] for r in rows}["Nick Folk"])
+
+
 def main():
     for fn in (test_abbreviations, test_team_sacks_total, test_two_column_split,
                test_negative_and_zero_lines, test_scoring_play_forms,
@@ -377,7 +440,9 @@ def main():
                test_end_zone_fumble_is_defensive_only_when_opp_rec,
                test_defense_aggregates, test_status_overrides,
                test_bye_versus_not_yet_pulled,
-               test_absent_player_gets_blank_status_not_active):
+               test_absent_player_gets_blank_status_not_active,
+               test_fumbles_out_of_bounds_reconcile,
+               test_free_agent_beats_a_former_team_bye):
         fn()
     for f in FAILS:
         print("FAIL ", f)

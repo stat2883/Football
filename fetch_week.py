@@ -55,6 +55,38 @@ def gamebook_url(slug):
     return found[0] if found else None
 
 
+def slug_nicknames(name):
+    """'bengals-at-commanders' -> ('bengals', 'commanders')."""
+    parts = name.split("-at-")
+    return (parts[0], parts[1]) if len(parts) == 2 else (None, None)
+
+
+def book_names_teams(head_text, name):
+    """Does this Game Book's header name both teams the slug names?
+
+    A game page carries a Game Book link for every game of the week, not only
+    its own, and the page's FIRST link is this game's book only once that book
+    has been published. Until then the first link belongs to some other game,
+    so an unchecked download files another game's statistics under this game's
+    name. It fails silently, and only on a week pulled before every game has
+    finished -- exactly the partial pull of SESSION_INSTRUCTIONS section 4.
+    Week 11 was pulled on the Sunday evening: the pages for the two games still
+    in progress both served the Thursday Colts-Texans book.
+    """
+    vis, home = slug_nicknames(name)
+    if not vis:
+        return True
+    head = head_text.lower()
+    return vis in head and home in head
+
+
+def book_matches(txt_path, name):
+    """book_names_teams against the top of an extracted Game Book."""
+    with open(txt_path, encoding="utf-8", errors="replace") as fh:
+        head = "".join(fh.readline() for _ in range(8))
+    return book_names_teams(head, name)
+
+
 def extract_text(pdf_path, txt_path):
     if not shutil.which("pdftotext"):
         raise RuntimeError("pdftotext not installed (apt-get install poppler-utils)")
@@ -111,6 +143,13 @@ def main():
         except (RuntimeError, subprocess.CalledProcessError) as exc:
             print(f"  {name:<28} ERROR {exc}")
             failed.append(name)
+            continue
+
+        if not book_matches(txt, name):
+            os.remove(pdf)
+            os.remove(txt)
+            print(f"  {name:<28} PENDING (page served another game's book)")
+            pending.append(name)
             continue
 
         print(f"  {name:<28} {os.path.getsize(pdf)//1024} KB")
