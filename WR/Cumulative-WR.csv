@@ -1,33 +1,33 @@
-name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Week07,Week08,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-"Smith-Njigba, Jaxon",Seattle Seahawks,WR,31.20,53.50,40.50,12.60,27.80,30.40,36.30,28.80,261.10,32.64,11.69
-"Lamb, CeeDee",Dallas Cowboys,WR,15.40,40.30,25.20,46.30,2.90,16.00,24.40,12.80,183.30,22.91,14.46
-"Watson, Christian",Green Bay Packers,WR,43.70,14.10,22.60,7.70,43.30,9.40,10.70,24.30,175.80,21.98,14.56
-"Higgins, Tee",Cincinnati Bengals,WR,8.90,14.50,21.00,31.70,4.20,BYE,31.80,42.50,154.60,22.09,13.88
-"St. Brown, Amon-Ra",Detroit Lions,WR,28.70,40.20,11.90,15.50,12.90,BYE,29.20,12.60,151.00,21.57,11.12
-"Nacua, Puka",Los Angeles Rams,WR,12.40,INACTIVE,INACTIVE,32.70,42.70,14.00,21.80,25.00,148.60,24.77,11.51
-"Golden, Matthew",Green Bay Packers,WR,15.50,9.80,26.00,11.70,25.30,27.40,9.90,20.90,146.50,18.31,7.48
-"Flowers, Zay",Baltimore Ravens,WR,37.00,INACTIVE,18.40,30.80,14.60,12.70,32.70,0.00,146.20,20.89,13.21
-"Nabers, Malik",New York Giants,WR,12.90,1.10,7.60,28.20,34.10,33.50,23.10,BYE,140.50,20.07,13.03
-"Olave, Chris",New Orleans Saints,WR,33.20,22.60,24.70,24.60,8.60,14.30,11.60,BYE,139.60,19.94,8.73
-"Chase, Ja'Marr",Cincinnati Bengals,WR,3.20,26.50,24.80,5.70,19.70,BYE,17.20,36.10,133.20,19.03,11.64
-"Wilson, Garrett",New York Jets,WR,13.90,16.70,31.70,5.70,28.40,8.40,4.60,14.30,123.70,15.46,10.00
-"McMillan, Tetairoa",Carolina Panthers,WR,12.50,20.10,3.70,50.20,BYE,14.60,8.00,11.80,120.90,17.27,15.40
-"London, Drake",Atlanta Falcons,WR,5.50,8.90,33.40,14.60,23.80,12.20,19.60,1.80,119.80,14.97,10.33
-"Adams, Davante",Los Angeles Rams,WR,5.60,44.50,25.70,7.20,22.10,6.90,IR,IR,112.00,18.67,15.29
-"Tucker, Tre",Las Vegas Raiders,WR,4.70,27.90,8.30,8.40,7.50,26.70,26.30,0.00,109.80,13.72,11.30
-"Pickens, George",Dallas Cowboys,WR,5.80,10.00,15.20,9.50,33.00,13.30,15.70,6.80,109.30,13.66,8.62
-"Washington, Parker",Jacksonville Jaguars,WR,19.30,16.80,13.00,2.00,41.40,10.40,BYE,3.60,106.50,15.21,13.18
-"Williams, Jameson",Detroit Lions,WR,8.50,5.30,8.90,21.20,18.70,BYE,26.10,17.00,105.70,15.10,7.67
-"Evans, Mike",San Francisco 49ers,WR,16.90,8.40,12.40,12.60,31.30,12.40,INACTIVE,BYE,94.00,15.67,8.12
-"Coker, Jalen",Carolina Panthers,WR,44.80,14.60,3.80,INACTIVE,BYE,15.70,1.90,11.60,92.40,15.40,15.47
-"Jefferson, Justin",Minnesota Vikings,WR,31.20,8.50,5.20,INACTIVE,18.80,BYE,8.40,14.30,86.40,14.40,9.56
-"Waddle, Jaylen",Denver Broncos,WR,1.20,26.80,6.40,14.50,4.80,6.40,8.80,14.90,83.80,10.47,8.08
-"Collins, Nico",Houston Texans,WR,21.20,INACTIVE,INACTIVE,35.80,10.60,10.90,2.60,BYE,81.10,16.22,12.78
-"Odunze, Rome",Chicago Bears,WR,7.20,7.30,7.40,15.40,7.00,6.90,10.90,12.70,74.80,9.35,3.26
-"Egbuka, Emeka",Tampa Bay Buccaneers,WR,11.30,10.30,11.20,3.30,17.20,17.80,INACTIVE,INACTIVE,71.10,11.85,5.30
-"Downs, Josh",Indianapolis Colts,WR,5.70,14.20,12.70,4.60,7.70,8.70,3.80,12.30,69.70,8.71,3.96
-"Moore, D.J.",Buffalo Bills,WR,26.00,-0.10,12.70,2.70,INACTIVE,INACTIVE,BYE,18.60,59.90,11.98,10.87
-"Doubs, Romeo",New England Patriots,WR,0.00,12.60,7.90,23.80,2.60,11.20,IR,IR,58.10,9.68,8.45
-"Addison, Jordan",Minnesota Vikings,WR,0.00,4.10,20.00,9.10,INACTIVE,BYE,4.30,11.60,49.10,8.18,7.08
-"Thomas Jr, Brian",Jacksonville Jaguars,WR,7.00,7.00,1.80,9.70,0.00,0.00,BYE,8.20,33.70,4.81,4.09
-"Brown, A.J.",New England Patriots,WR,5.60,IR,IR,IR,IR,5.70,7.80,INACTIVE,19.10,6.37,1.24
+name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Week07,Week08,Week09,Week10,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+"Smith-Njigba, Jaxon",Seattle Seahawks,WR,31.20,53.50,40.50,12.60,27.80,30.40,36.30,28.80,12.10,42.10,315.30,31.53,12.72
+"Lamb, CeeDee",Dallas Cowboys,WR,15.40,40.30,25.20,46.30,2.90,16.00,24.40,12.80,40.50,20.20,244.00,24.40,13.98
+"Watson, Christian",Green Bay Packers,WR,43.70,14.10,22.60,7.70,43.30,9.40,10.70,24.30,35.10,6.70,217.60,21.76,14.49
+"Chase, Ja'Marr",Cincinnati Bengals,WR,3.20,26.50,24.80,5.70,19.70,BYE,17.20,36.10,36.50,41.10,210.80,23.42,13.38
+"St. Brown, Amon-Ra",Detroit Lions,WR,28.70,40.20,11.90,15.50,12.90,BYE,29.20,12.60,16.60,31.80,199.40,22.16,10.42
+"Golden, Matthew",Green Bay Packers,WR,15.50,9.80,26.00,11.70,25.30,27.40,9.90,20.90,37.40,12.00,195.90,19.59,9.31
+"Nacua, Puka",Los Angeles Rams,WR,12.40,INACTIVE,INACTIVE,32.70,42.70,14.00,21.80,25.00,42.00,IR,190.60,27.23,12.36
+"Higgins, Tee",Cincinnati Bengals,WR,8.90,14.50,21.00,31.70,4.20,BYE,31.80,42.50,20.20,11.60,186.40,20.71,12.51
+"Flowers, Zay",Baltimore Ravens,WR,37.00,INACTIVE,18.40,30.80,14.60,12.70,32.70,0.00,5.30,13.40,164.90,18.32,12.68
+"Olave, Chris",New Orleans Saints,WR,33.20,22.60,24.70,24.60,8.60,14.30,11.60,BYE,16.80,6.00,162.40,18.04,8.87
+"Washington, Parker",Jacksonville Jaguars,WR,19.30,16.80,13.00,2.00,41.40,10.40,BYE,3.60,20.10,33.20,159.80,17.76,12.90
+"Nabers, Malik",New York Giants,WR,12.90,1.10,7.60,28.20,34.10,33.50,23.10,BYE,9.30,9.40,159.20,17.69,12.24
+"Pickens, George",Dallas Cowboys,WR,5.80,10.00,15.20,9.50,33.00,13.30,15.70,6.80,INACTIVE,48.50,157.80,17.53,14.14
+"London, Drake",Atlanta Falcons,WR,5.50,8.90,33.40,14.60,23.80,12.20,19.60,1.80,11.80,21.90,153.50,15.35,9.45
+"Wilson, Garrett",New York Jets,WR,13.90,16.70,31.70,5.70,28.40,8.40,4.60,14.30,INACTIVE,22.60,146.30,16.26,9.65
+"McMillan, Tetairoa",Carolina Panthers,WR,12.50,20.10,3.70,50.20,BYE,14.60,8.00,11.80,15.60,6.50,143.00,15.89,13.80
+"Tucker, Tre",Las Vegas Raiders,WR,4.70,27.90,8.30,8.40,7.50,26.70,26.30,0.00,9.50,1.90,121.20,12.12,10.68
+"Collins, Nico",Houston Texans,WR,21.20,INACTIVE,INACTIVE,35.80,10.60,10.90,2.60,BYE,15.50,24.40,121.00,17.29,10.90
+"Williams, Jameson",Detroit Lions,WR,8.50,5.30,8.90,21.20,18.70,BYE,26.10,17.00,5.00,9.00,119.70,13.30,7.61
+"Adams, Davante",Los Angeles Rams,WR,5.60,44.50,25.70,7.20,22.10,6.90,IR,IR,IR,IR,112.00,18.67,15.29
+"Jefferson, Justin",Minnesota Vikings,WR,31.20,8.50,5.20,INACTIVE,18.80,BYE,8.40,14.30,8.80,16.40,111.60,13.95,8.37
+"Coker, Jalen",Carolina Panthers,WR,44.80,14.60,3.80,INACTIVE,BYE,15.70,1.90,11.60,6.60,0.30,99.30,12.41,14.29
+"Evans, Mike",San Francisco 49ers,WR,16.90,8.40,12.40,12.60,31.30,12.40,INACTIVE,BYE,INACTIVE,INACTIVE,94.00,15.67,8.12
+"Odunze, Rome",Chicago Bears,WR,7.20,7.30,7.40,15.40,7.00,6.90,10.90,12.70,16.00,BYE,90.80,10.09,3.77
+"Downs, Josh",Kansas City Chiefs,WR,5.70,14.20,12.70,4.60,7.70,8.70,3.80,12.30,5.40,15.30,90.40,9.04,4.26
+"Waddle, Jaylen",Denver Broncos,WR,1.20,26.80,6.40,14.50,4.80,6.40,8.80,14.90,3.20,BYE,87.00,9.67,7.93
+"Moore, D.J.",Buffalo Bills,WR,26.00,-0.10,12.70,2.70,INACTIVE,INACTIVE,BYE,18.60,6.60,19.40,85.90,12.27,9.63
+"Egbuka, Emeka",Tampa Bay Buccaneers,WR,11.30,10.30,11.20,3.30,17.20,17.80,INACTIVE,INACTIVE,6.90,BYE,78.00,11.14,5.18
+"Doubs, Romeo",New England Patriots,WR,0.00,12.60,7.90,23.80,2.60,11.20,IR,IR,IR,IR,58.10,9.68,8.45
+"Addison, Jordan",Minnesota Vikings,WR,0.00,4.10,20.00,9.10,INACTIVE,BYE,4.30,11.60,4.80,INACTIVE,53.90,7.70,6.59
+"Thomas Jr, Brian",Jacksonville Jaguars,WR,7.00,7.00,1.80,9.70,0.00,0.00,BYE,8.20,0.00,5.90,39.60,4.40,3.92
+"Brown, A.J.",New England Patriots,WR,5.60,IR,IR,IR,IR,5.70,7.80,INACTIVE,INACTIVE,4.70,23.80,5.95,1.31
