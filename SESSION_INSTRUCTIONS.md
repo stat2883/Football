@@ -272,19 +272,19 @@ and fill one row per tracked player whose game has been pulled. Columns a
 position does not use stay blank.
 
 **`status` is mandatory on every row.** Use `active` for a game played, or
-`BYE`, `DNP`, `IR`, `INACTIVE`, `OUT`, `SUSPENDED`. A blank status is rejected,
-because it cannot be told apart from a game not yet pulled.
+`BYE`, `DNP`, `FA`, `IR`, `INACTIVE`, `OUT`, `SUSPENDED`. A blank status is
+rejected, because it cannot be told apart from a game not yet pulled.
 
 **Absent from the Game Book is not the same as inactive.** The Not Active list
 names players who dressed and did not play; a player on IR, on the
 Commissioner's Exempt List or otherwise off the gameday roster appears nowhere
 in the document at all — not in the lineup, the substitutions, Did Not Play or
 Not Active. He still needs a status, and the Game Book cannot supply one.
-Confirm the reason outside it and record `IR`, `OUT` or `SUSPENDED`; do not
-guess between them, and do not leave the row as `active`, which would score the
-player a real 0.00 and drag his average down for a game he was ineligible for.
-Every non-active status is excluded from games played alike, so the choice
-affects the displayed label rather than any arithmetic.
+Confirm the reason outside it and record `IR`, `FA`, `OUT` or `SUSPENDED`; do
+not guess between them, and do not leave the row as `active`, which would
+score the player a real 0.00 and drag his average down for a game he was
+ineligible for. Every non-active status is excluded from games played alike,
+so the choice affects the displayed label rather than any arithmetic.
 
 Record the answer in `weeks/status-overrides.csv`
 (`name,first_week,last_week,status,note`) rather than editing the raw file,

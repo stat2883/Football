@@ -23,7 +23,9 @@ POSITIONS = ["QB", "RB", "WR", "TE", "K", "DEF"]
 
 # Status values meaning the player did not play. Compared case-insensitively.
 # These weeks are excluded from games played, average, and standard deviation.
-INACTIVE_STATUSES = {"bye", "dnp", "ir", "inactive", "out", "suspended"}
+# FA is a player who was released and was on no roster that week: tracked, but
+# not eligible to play for anyone. Neither an injury (IR) nor discipline.
+INACTIVE_STATUSES = {"bye", "dnp", "fa", "ir", "inactive", "out", "suspended"}
 
 
 def split_name(full_name):
