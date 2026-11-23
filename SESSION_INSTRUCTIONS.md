@@ -29,6 +29,43 @@ altogether did not play.
 
 If the repo cannot be reached, say so plainly rather than proceeding from memory.
 
+### Auto mode may block the pipeline scripts
+
+In a claude.ai browser session the auto mode classifier has refused
+`python3 fetch_week.py` and `python3 parse_week.py` outright, reported as
+`bash denied by auto mode · [Undermining Oversight]`. The cause is that this
+repo is cloned into the session rather than being the repo the session started
+in, so the classifier treats its scripts as untrusted external code. Nothing is
+wrong with the scripts and nothing needs changing in them.
+
+**One sentence from the user clears it.** A request that names the scripts
+directly — "pull weeks 11 and 12, and run the pipeline scripts" — counts as
+explicit intent and is allowed; "pull weeks 11 and 12" on its own is too
+general and gets refused. So: if a script is refused, say plainly that this is
+what happened and ask the user to authorize the scripts by name. Then use that
+authorization. Do **not** go hunting for an invocation that slips past the
+classifier — `python3 -I` is permitted but breaks the repo's own imports, and
+trying variants until one passes defeats the point of the check. Downloading
+the Game Books by running `curl` and `pdftotext` directly is a legitimate
+substitute for `fetch_week.py`, because those are the only two things it does;
+the scoring pipeline has no such substitute and must not be reimplemented by
+hand, which would risk inventing statistics (§8).
+
+**Settings cannot fix this from a browser session, and Claude should not try.**
+The classifier reads `autoMode.environment` only from a home-directory
+`settings.json` on a real machine, from organization-managed settings, or from
+a `--settings` flag. User settings never reach a cloud session, and `autoMode`
+in a repo's own `.claude/settings.json` is ignored by design so that a repo
+cannot vouch for itself — which is also why Claude should not write that config
+for itself even where it would work. An Owner on a Team or Enterprise plan can
+set it organization-wide; on a personal plan there is no configuration route,
+and the one-sentence authorization above is the whole answer.
+
+Two fallbacks inside the session if that ever fails: the permission mode
+dropdown under the prompt box, where switching off Auto prompts for each
+command, and `/permissions` > Recently denied, where `r` retries a refused
+command.
+
 ---
 
 ## 2. Repository Structure
