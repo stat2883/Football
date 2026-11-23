@@ -1,0 +1,18 @@
+name,team,status,pass_yds,pass_td,pass_2pt,int_thrown,rush_yds,rush_td,rush_2pt,td_50plus,points
+"Allen, Josh",Buffalo Bills,active,304,1,,2,,,,,22.20
+"Goff, Jared",Detroit Lions,active,279,2,,0,12,0,,1,33.15
+"Mahomes, Patrick",Kansas City Chiefs,active,324,3,,0,,,,,39.20
+"Mayfield, Baker",Tampa Bay Buccaneers,active,187,2,,0,36,0,,,24.95
+"Prescott, Dak",Dallas Cowboys,active,325,4,,0,9,1,,,52.15
+"Rodgers, Aaron",Pittsburgh Steelers,active,227,1,,0,29,0,,,20.25
+"Shough, Tyler",New Orleans Saints,active,222,1,,1,34,0,,,18.50
+"Stroud, C.J.",Houston Texans,active,194,3,,1,27,0,,,28.40
+"Williams, Caleb",Chicago Bears,active,181,2,,1,11,0,,,20.15
+"Young, Bryce",Carolina Panthers,active,254,2,,1,-2,0,,,22.50
+"Jackson, Lamar",Baltimore Ravens,IR,,,,,,,,,0.00
+"Love, Jordan",Green Bay Packers,BYE,,,,,,,,,0.00
+"Maye, Drake",New England Patriots,BYE,,,,,,,,,0.00
+"Penix Jr, Michael",Atlanta Falcons,BYE,,,,,,,,,0.00
+"Stafford, Matthew",Los Angeles Rams,BYE,,,,,,,,,0.00
+"Watson, Deshaun",Cleveland Browns,BYE,,,,,,,,,0.00
+"Willis, Malik",Miami Dolphins,IR,,,,,,,,,0.00

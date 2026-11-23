@@ -1,10 +1,10 @@
-name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Week07,Week08,Week09,Week10,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
-Minnesota Vikings,Minnesota Vikings,DEF,20.80,27.90,27.00,14.00,18.40,BYE,21.50,18.00,20.40,41.00,209.00,23.22,7.94
-Jacksonville Jaguars,Jacksonville Jaguars,DEF,28.20,6.00,31.10,20.00,6.00,3.00,BYE,53.10,18.00,6.00,171.40,19.04,16.43
-Seattle Seahawks,Seattle Seahawks,DEF,26.00,19.00,6.00,26.00,20.00,9.00,16.00,6.00,19.00,23.00,170.00,17.00,7.62
-Chicago Bears,Chicago Bears,DEF,15.00,14.00,25.00,14.00,6.00,24.00,9.00,16.60,36.70,BYE,160.30,17.81,9.37
-Cincinnati Bengals,Cincinnati Bengals,DEF,32.70,22.00,10.10,12.00,18.70,BYE,21.40,14.00,6.60,12.00,149.50,16.61,7.96
-Houston Texans,Houston Texans,DEF,6.00,18.00,24.00,9.00,29.90,3.00,9.00,BYE,30.00,15.30,144.20,16.02,10.15
-Cleveland Browns,Cleveland Browns,DEF,3.00,17.50,14.80,21.00,21.00,17.00,9.00,6.00,21.00,5.50,135.80,13.58,7.07
-Las Vegas Raiders,Las Vegas Raiders,DEF,26.00,25.90,21.50,6.00,6.00,6.00,9.00,9.00,8.60,15.00,133.00,13.30,8.23
-San Francisco 49ers,San Francisco 49ers,DEF,16.00,17.00,6.00,6.00,33.20,15.00,0.00,BYE,27.50,9.00,129.70,14.41,10.68
+name,team,position,Week01,Week02,Week03,Week04,Week05,Week06,Week07,Week08,Week09,Week10,Week11,Total Cumulative Fantasy Points,Average Points Per Game,Standard Deviation
+Minnesota Vikings,Minnesota Vikings,DEF,20.80,27.90,27.00,14.00,18.40,BYE,21.50,18.00,20.40,41.00,,209.00,23.22,7.94
+Chicago Bears,Chicago Bears,DEF,15.00,14.00,25.00,14.00,6.00,24.00,9.00,16.60,36.70,BYE,31.00,191.30,19.13,9.77
+Jacksonville Jaguars,Jacksonville Jaguars,DEF,28.20,6.00,31.10,20.00,6.00,3.00,BYE,53.10,18.00,6.00,,171.40,19.04,16.43
+Seattle Seahawks,Seattle Seahawks,DEF,26.00,19.00,6.00,26.00,20.00,9.00,16.00,6.00,19.00,23.00,BYE,170.00,17.00,7.62
+Houston Texans,Houston Texans,DEF,6.00,18.00,24.00,9.00,29.90,3.00,9.00,BYE,30.00,15.30,21.00,165.20,16.52,9.70
+Cincinnati Bengals,Cincinnati Bengals,DEF,32.70,22.00,10.10,12.00,18.70,BYE,21.40,14.00,6.60,12.00,,149.50,16.61,7.96
+Cleveland Browns,Cleveland Browns,DEF,3.00,17.50,14.80,21.00,21.00,17.00,9.00,6.00,21.00,5.50,BYE,135.80,13.58,7.07
+Las Vegas Raiders,Las Vegas Raiders,DEF,26.00,25.90,21.50,6.00,6.00,6.00,9.00,9.00,8.60,15.00,,133.00,13.30,8.23
+San Francisco 49ers,San Francisco 49ers,DEF,16.00,17.00,6.00,6.00,33.20,15.00,0.00,BYE,27.50,9.00,,129.70,14.41,10.68
